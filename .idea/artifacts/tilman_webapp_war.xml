@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tilman-webapp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="tilman-webapp.war">
+      <element id="artifact" artifact-name="tilman-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>
