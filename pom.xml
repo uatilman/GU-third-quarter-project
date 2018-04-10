@@ -7,19 +7,31 @@
     <version>1.0-SNAPSHOT</version>
     <name>tilman-webapp Maven Webapp</name>
     <url>http://tilman-webapp-java-ee-gb.7e14.starter-us-west-2.openshiftapps.com/tilman-webapp/</url>
+
     <developers>
         <developer>
             <name>Yuriy Tilman</name>
             <email>uatilman@gmail.com</email>
         </developer>
     </developers>
+
     <dependencies>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>tilman-webapp</finalName>
