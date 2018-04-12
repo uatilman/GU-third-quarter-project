@@ -13,5 +13,4 @@
         </a>
         <jsp:include page="menu.jsp"/>
     </div>
-    <%= request.getAttribute("date") %>
 </header>
