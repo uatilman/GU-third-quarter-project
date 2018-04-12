@@ -10,22 +10,10 @@
 </head>
 <body>
 <div class="container">
-    <header class="slider padding-site">
-        <div class="header">
-            <a href="index.jsp" class="logo">
-                <img src="img/logo.png" alt="logo">
-            </a>
-            <nav>
-                <ul class="menu">
-                    <li><a class="active-link" href="index.jsp">HOME</a></li>
-                    <li><a href="products.jsp">PRODUCTS</a></li>
-                    <li><a href="#">HISTORY</a></li>
-                    <li><a href="#">SHOWROOM</a></li>
-                    <li><a href="contacts.jsp">CONTACT</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="header-text">
+    <div class="slider">
+        <jsp:include page="head.jsp"/>
+
+        <div class="header-text padding-site">
             <h4>TRENDING</h4>
             <h2>Fishnet Chair</h2>
             <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt</p>
@@ -36,7 +24,8 @@
             <a href="#" class="circle circle-active"></a>
             <a href="#" class="circle"></a>
         </div>
-    </header>
+    </div>
+
     <main class="content">
         <div class="padding-site">
             <div class="submenu">
@@ -67,7 +56,7 @@
                 <div class="item">
                     <img src="img/product-4.jpg" alt="product 4 image">
                     <div class="product-hover">
-                        <a class="product-link" href="fishnet_chair.jsp"><img src="img/arrow.png"
+                        <a class="product-link" href="product"><img src="img/arrow.png"
                                                                               alt="order button image"></a>
                         <h3>Fishnet Chair 3</h3>
                         <p>Seat and back with upholstery 111 made of&nbsp;cold cure foam</p>
@@ -116,7 +105,7 @@
             </div>
             <div class="product product-in-home-page">
                 <a href="#"><img src="img/product10.jpg" alt="product 10 image"></a>
-                <a href="fishnet_chair.jsp"><img src="img/product11.jpg" alt="product 11 image"></a>
+                <a href="product"><img src="img/product11.jpg" alt="product 11 image"></a>
                 <a href="#"><img src="img/product12.png" alt="product 12 image"></a>
                 <a href="#"> <img src="img/product13.png" alt="product 13 image"></a>
                 <a href="#"><img src="img/product14.png" alt="product 14 image"></a>
@@ -169,61 +158,7 @@
             </div>
         </div>
     </main>
-    <footer class="footer padding-site">
-        <div class="footer-top">
-            <div class="contact-us">
-                <h4 class="footer-heading">Contact Us</h4>
-                <p>
-                    132A Bridge Road Richmond VIC
-                    Australia.<br><br>
-
-                    Talk to&nbsp;us on&nbsp;1300&nbsp;132
-                    info@interior.com
-                </p>
-            </div>
-            <div class="useful">
-                <h4 class="footer-heading">Useful Information</h4>
-                <div class="information">
-                    <ul>
-                        <li><a href="#">Sales terms</a></li>
-                        <li><a href="#">Customer care</a></li>
-                        <li><a href="#">Delivery</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="#">Architect accounts</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Exchanges &amp;&nbsp;returns</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="let-stay">
-                <h4 class="footer-heading">Let&rsquo;s Stay in&nbsp;Touch!</h4>
-                <p>Subscribe to&nbsp;know about our latest news, products and special offers just for suscribers.</p>
-                <form action="#">
-                    <input placeholder="your email address" type="email">
-                    <button type="submit"><i class="fab fa-telegram-plane"></i></button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="copyright">
-                &copy;&nbsp;Copyright&nbsp;&mdash; INTERIOR 2016. All Rights Reserved.
-            </div>
-            <div class="social-networks">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-google-plus-g"></i>
-                <i class="fab fa-pinterest-p"></i>
-            </div>
-            <div class="terms">
-                <a href="#">Terms &amp;&nbsp;Conditions</a>
-                /
-                <a href="#">Privacy policy &amp;&nbsp;Cookies</a>
-            </div>
-
-        </div>
-
-    </footer>
+    <jsp:include page="footer.jsp"/>
 </div>
 </body>
 </html>

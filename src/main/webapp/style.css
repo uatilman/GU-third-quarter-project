@@ -46,6 +46,7 @@ body {
     display: flex;
     justify-content: space-between;
     position: relative;
+    margin-bottom: 50px;
 }
 
 .header-contacts h2 {
@@ -89,8 +90,12 @@ body {
     border-bottom: 3px solid #212121;
 }
 
+.test-time {
+    margin-top: 20px;
+}
+
 .header-text {
-    margin-top: 283px;
+    margin-top: 233px;
 }
 
 .header-text p {
@@ -969,4 +974,11 @@ button .svg-inline--fa.fa-w-14:hover {
 
 .product-description-text p {
     margin-bottom: 12px;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
