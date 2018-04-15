@@ -17,14 +17,6 @@
     </developers>
 
     <dependencies>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
         <dependency>
             <groupId>javax</groupId>
@@ -32,23 +24,18 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <build>
-
         <finalName>tilman</finalName>
 
         <plugins>
-
             <plugin>
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>1.2.1.Final</version>
             </plugin>
-
         </plugins>
-
     </build>
 
 </project>
