@@ -1,7 +1,4 @@
-# tilman-app-ee
-
-
-
+# GU-third-quarter-project
 
 Educational project of the Faculty of Geek University Java-development on the portal <a href = "https://geekbrains.ru">geekbrains</a>  in subjects:
 
