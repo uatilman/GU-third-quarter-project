@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="products" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="m" uri="/WEB-INF/tags.tld" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +21,105 @@
     <jsp:include page="head.jsp"/>
     <main class="content">
         <div class="padding-site">
-            <h2>Test page</h2>
+            <h1>Test page</h1>
+
+            <h2>Использование Сервлета для создания списка продуктов</h2>
+            <pre><code class="language-java">
+                //JAVA
+                @WebServlet(urlPatterns = {"/tests", "/header"})
+                public class TestServlet extends HttpServlet {
+
+                    @Override
+                    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+                        req.setAttribute("date", new Date());
+                        req.setAttribute("productsAttribute", Product.getTestProductList());
+                        req.getRequestDispatcher("tests.jsp").forward(req, resp);
+                    }
+                }
+
+                //JSP
+                &lt;div class="product product-in-home-page"&gt;
+                    &lt;c:forEach var="productS" items="&dollar;{productsAttribute}"&gt;
+                        &lt;div class="item"&gt;
+                            &lt;img class="item-product-img" src="&lt;c:out value="&dollar;{productS.imgUrl}"/&gt;" alt="product 1 image"&gt;
+                            &lt;div class="product-hover"&gt;
+                                &lt;a class="product-link" href="#"&gt;&lt;img src="img/arrow.png" alt="order button image"&gt;&lt;/a&gt;
+                                &lt;h3&gt;&lt;c:out value="&dollar;{productS}"/&gt;&lt;/h3&gt;
+                                &lt;p&gt;&lt;c:out value="&dollar;{productS.description}"/&gt;&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/c:forEach&gt;
+                &lt;/div&gt;
+            </code></pre>
+
+            <div class="product product-in-home-page">
+                <c:forEach var="productS" items="${productsAttribute}">
+                    <div class="item">
+                        <img class="item-product-img" src="<c:out value="${productS.imgUrl}"/>" alt="product 1 image">
+                        <div class="product-hover">
+                            <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
+                            <h3><c:out value="${productS}"/></h3>
+                            <p><c:out value="${productS.description}"/></p>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+
+            <h2>Создание собственного тега</h2>
+            <m:test-tag basic="я значение basic атрибута"/>
+
+            <br>
+            <br>
+            <h2>Использование Java Bean для создания списка продуктов</h2>
+            <pre><code class="language-java">
+                //JAVA
+                public class ProductsView {
+                    private List&lt;Product&gt; products;
+
+                    public ProductsView() {
+                        this.products = new ArrayList&lt;Product&gt;();
+                        products.add(new Product("Fishnet Chair0", "The majesty of Mountains — Ugmonk style.","img/product-1.jpg"));
+                        products.add(new Product("Fishnet Chair1", "The majesty of Mountains — Ugmonk style.","img/product-3.jpg"));
+                        products.add(new Product("Fishnet Chair2", "The majesty of Mountains — Ugmonk style.","img/product10.jpg"));
+                        products.add(new Product("Fishnet Chair3", "The majesty of Mountains — Ugmonk style.","img/product1.jpg"));
+                    }
+
+                    public List&lt;Product&gt; getProducts() {
+                        return products;
+                    }
+
+                    public void setProducts(List&lt;Product&gt; products) {
+                        this.products = products;
+                    }
+                }
+
+                //JSP
+                &lt;jsp:useBean id="producrList" class="ru.tilman.gb.ee.ProductsView" scope="request"/&gt;
+                &lt;products:forEach items="&dollar;{producrList.products}" var="product"&gt;
+                    &lt;div class="item"&gt;
+                        &lt;img class="item-product-img" src="&dollar;{product.imgUrl}" alt="product 1 image"&gt;
+                        &lt;div class="product-hover"&gt;
+                            &lt;a class="product-link" href="#"&gt;&lt;img src="img/arrow.png" alt="order button image"&gt;&lt;/a&gt;
+                            &lt;h3&gt;&dollar;{product}&lt;/h3&gt;
+                            &lt;p&gt;&dollar;{product.description}&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/products:forEach&gt;
+            </code></pre>
+            <p>RESULT:</p>
+            <div class="product product-in-home-page">
+                <jsp:useBean id="producrList" class="ru.tilman.gb.ee.ProductsView" scope="request"/>
+                <products:forEach items="${producrList.products}" var="product">
+                    <div class="item">
+                        <img class="item-product-img" src="${product.imgUrl}" alt="product 1 image">
+                        <div class="product-hover">
+                            <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
+                            <h3>${product}</h3>
+                            <p>${product.description}</p>
+                        </div>
+                    </div>
+                </products:forEach>
+            </div>
             <br>
             <br>
             <h3>Сервлеты</h3>
@@ -91,8 +192,7 @@
             <pre><code class="language-java"></code></pre>
             <pre><code class="language-java"></code></pre>
             <pre><code class="language-java"></code></pre>
-            <pre><code class="language-java"></code></pre>
-            &lt; &gt;
+
             &lt; &gt;
             &lt; &gt;
             &lt; &gt;

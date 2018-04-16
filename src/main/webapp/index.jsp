@@ -39,14 +39,14 @@
             </div>
             <div class="product product-in-home-page">
                 <div class="item">
-                    <img src="img/product-1.jpg" alt="product 1 image">
+                    <img class="item-product-img"  src="img/product-1.jpg" alt="product 1 image">
                     <div class="product-hover">
                         <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
                         <h3>Fishnet Chair</h3>
                         <p>Seat and back with upholstery made of&nbsp;cold cure foam</p>
                     </div>
                 </div>
-                <div class="item"><img src="img/product-3.jpg" alt="product 3  image">
+                <div class="item"><img class="item-product-img" src="img/product-3.jpg" alt="product 3  image">
                     <div class="product-hover">
                         <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
                         <h3>Fishnet Chair</h3>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="img/product-4.jpg" alt="product 4 image">
+                    <img class="item-product-img" src="img/product-3.jpg" alt="product 4 image">
                     <div class="product-hover">
                         <a class="product-link" href="product"><img src="img/arrow.png"
                                                                     alt="order button image"></a>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="img/product1.jpg" alt="product - image">
+                    <img class="item-product-img" src="img/product1.jpg" alt="product - image">
                     <div class="product-hover">
                         <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
                         <h3>Fishnet Chair</h3>
