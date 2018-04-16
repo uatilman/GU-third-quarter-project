@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <div class="slider">
-        <jsp:include page="head.jsp"/>
+        <%@include file="head.jsp" %>
 
         <div class="header-text padding-site">
             <h4>TRENDING</h4>
@@ -57,7 +57,7 @@
                     <img src="img/product-4.jpg" alt="product 4 image">
                     <div class="product-hover">
                         <a class="product-link" href="product"><img src="img/arrow.png"
-                                                                              alt="order button image"></a>
+                                                                    alt="order button image"></a>
                         <h3>Fishnet Chair 3</h3>
                         <p>Seat and back with upholstery 111 made of&nbsp;cold cure foam</p>
                     </div>

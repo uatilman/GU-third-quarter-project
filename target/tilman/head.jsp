@@ -10,6 +10,7 @@
     <div class="header">
         <a href="${pageContext.request.contextPath}/" class="logo">
             <img src="img/logo.png" alt="logo">
+            <div>Result: <%= request.getAttribute("date") %></div>
         </a>
         <jsp:include page="menu.jsp"/>
     </div>

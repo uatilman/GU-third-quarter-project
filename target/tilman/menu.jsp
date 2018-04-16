@@ -14,6 +14,8 @@
         <li><a href="product">PRODUCT</a></li>
         <li><a href="cart">CART</a></li>
         <li><a href="order">ORDER</a></li>
-        <li><a href="contacts.jsp">CONTACT</a></li>
+        <li><a href="contacts.jsp">CONTACT</a>
+        <li><a href="tests">TESTS</a>
+        </li>
     </ul>
 </nav>
