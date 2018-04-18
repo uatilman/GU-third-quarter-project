@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Catalog</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-            integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-            crossorigin="anonymous"></script>
-</head>
+<jsp:include page="fragments/head.jsp">
+    <jsp:param name="title" value="Catalog"/>
+</jsp:include>
 <body>
 <div class="container">
     <div class="slider-with-background-color">
-        <jsp:include page="head.jsp"/>
+        <jsp:include page="fragments/header.jsp">
+            <jsp:param name="menuname" value="CATALOG"/>
+        </jsp:include>
         <div class="header-contacts padding-site">
             <h2>Our Products Range</h2>
         </div>
@@ -70,7 +67,7 @@
         </div>
     </main>
 
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="fragments/footer.jsp"/>
 </div>
 </body>
 </html>

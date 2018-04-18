@@ -19,4 +19,14 @@
         </attribute>
     </tag>
 
+    <!--<tag>-->
+        <!--<name>menu</name>-->
+        <!--<tag-class>ru.tilman.gb.ee.TagHandler</tag-class>-->
+        <!--<attribute>-->
+            <!--<name>basic</name>-->
+            <!--<required>true</required>-->
+            <!--<type>java.lang.String</type>-->
+        <!--</attribute>-->
+    <!--</tag>-->
+
 </taglib>

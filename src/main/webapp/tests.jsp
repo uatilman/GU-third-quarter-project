@@ -4,21 +4,21 @@
 <%@ taglib prefix="m" uri="/WEB-INF/tags.tld" %>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tests</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="prism.css">
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-            integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-            crossorigin="anonymous"></script>
+<jsp:include page="fragments/head.jsp">
+    <jsp:param name="title" value="Tests"/>
+</jsp:include>
 
-</head>
 <body>
-<script src="prism.js"></script>
+<script src="js/prism.js"></script>
 <div class="container">
-    <jsp:include page="head.jsp"/>
+    <%--// c передачей переменной см. урок 4  27.47--%>
+    <%--// xhtml jsf 42:48 - end--%>
+    <%--экспорт в эксель 1:26--%>
+    <jsp:include page="fragments/header.jsp">
+        <jsp:param name="menuname" value="TESTS"/>
+    </jsp:include>
+
     <main class="content">
         <div class="padding-site">
             <h1>Test page</h1>
@@ -65,11 +65,6 @@
                 </c:forEach>
             </div>
 
-            <h2>Создание собственного тега</h2>
-            <m:test-tag basic="я значение basic атрибута"/>
-
-            <br>
-            <br>
             <h2>Использование Java Bean для создания списка продуктов</h2>
             <pre><code class="language-java">
                 //JAVA
@@ -120,6 +115,24 @@
                     </div>
                 </products:forEach>
             </div>
+            <br>
+            <br>
+            <h2>Создание собственного тега</h2>
+            <m:test-tag basic="я значение basic атрибута"/>
+            <br>
+            <br>
+
+            <h3>Изучаю pageContext</h3>
+            <ol>
+                <li>${pageContext.request.contextPath}</li>
+                <li>${pageContext.request.localAddr}</li>
+                <li>${pageContext.request.getAttribute("url")}</li>
+                <li>${pageContext.request.getContextPath()}</li>
+                <li>${pageContext.request.getPathInfo()}</li>
+                <li>${pageContext.request.getRequestURI()}</li>
+                <li>${pageContext.request.getRequestURL()}</li>
+                <li>${pageContext.request.getServletPath()}</li>
+            </ol>
             <br>
             <br>
             <h3>Сервлеты</h3>
@@ -199,7 +212,7 @@
             &lt; &gt;
         </div>
     </main>
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="fragments/footer.jsp"/>
 
 </div>
 </body>

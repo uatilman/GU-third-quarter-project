@@ -6,9 +6,11 @@ ru\tilman\gb\patterns\users\ManagerUser.class
 ru\tilman\gb\ee\filter\CharsetFilter.class
 ru\tilman\gb\ee\Product.class
 ru\tilman\gb\patterns\users\UsersType.class
+ru\tilman\gb\ee\MenuItems.class
 ru\tilman\gb\patterns\users\UserFactory$1.class
 ru\tilman\gb\ee\servlet\ProductServlet.class
 ru\tilman\gb\patterns\Cart.class
+ru\tilman\gb\ee\servlet\ContactsServlet.class
 ru\tilman\gb\ee\servlet\TestServlet.class
 ru\tilman\gb\patterns\users\User.class
 ru\tilman\gb\patterns\users\CustomerUser.class

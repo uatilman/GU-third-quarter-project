@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Interior</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-            integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-            crossorigin="anonymous"></script>
-</head>
+<jsp:include page="fragments/head.jsp">
+    <jsp:param name="title" value="Interior"/>
+</jsp:include>
 <body>
 <div class="container">
     <div class="slider">
-        <%@include file="head.jsp" %>
-
+        <jsp:include page="fragments/header.jsp">
+            <jsp:param name="menuname" value="HOME"/>
+        </jsp:include>
         <div class="header-text padding-site">
             <h4>TRENDING</h4>
             <h2>Fishnet Chair</h2>
@@ -158,7 +154,7 @@
             </div>
         </div>
     </main>
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="fragments/footer.jsp"/>
 </div>
 </body>
 </html>

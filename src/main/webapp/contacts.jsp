@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-            integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-            crossorigin="anonymous"></script>
-</head>
+
+<jsp:include page="fragments/head.jsp">
+    <jsp:param name="title" value="Contact Us"/>
+</jsp:include>
 <body>
 <div class="container">
-    <header class="slider-with-background-color padding-site">
-        <div class="header header-contacts">
-            <a href="index.jsp" class="logo">
-                <img src="img/logo.png" alt="logo">
-            </a>
-            <jsp:include page="menu.jsp"/>
-            <h2>Contact Us</h2>
-        </div>
-    </header>
+    <jsp:include page="fragments/header.jsp">
+        <jsp:param name="menuname" value="CONTACT"/>
+    </jsp:include>
     <main class="content">
         <div class="padding-site">
             <div class="office-location-block">
@@ -59,7 +49,7 @@
         </div>
 
     </main>
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="fragments/footer.jsp"/>
 </div>
 </body>
 </html>
