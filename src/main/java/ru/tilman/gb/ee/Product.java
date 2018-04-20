@@ -1,14 +1,24 @@
 package ru.tilman.gb.ee;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Product {
     private String name;
     private String description;
     private String imgUrl;
 
-    public Product(String name, String description, String imgUrl) {
+
+    public Product() {
+        this.name = "Fishnet Chair0";
+        this.description = "The majesty of Mountains — Ugmonk style.";
+
+    }
+
+    private Product(String name, String description, String imgUrl) {
         this.name = name;
         this.description = description;
         this.imgUrl = imgUrl;
@@ -42,7 +52,6 @@ public class Product {
     public String toString() {
         return name;
     }
-
     public static List<Product> getTestProductList() {
         List<Product> products = new ArrayList<Product>();
         products.add(new Product("Fishnet Chair0", "The majesty of Mountains — Ugmonk style.", "img/product-1.jpg"));
