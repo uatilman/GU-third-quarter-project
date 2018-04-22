@@ -8,7 +8,7 @@
 
     <managed-bean>
         <managed-bean-name>product</managed-bean-name>
-        <managed-bean-class>ru.tilman.gb.ee.Product</managed-bean-class>
+        <managed-bean-class>ru.tilman.gb.ee.entity.Product</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
 

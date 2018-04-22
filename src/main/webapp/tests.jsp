@@ -103,7 +103,7 @@
             </code></pre>
             <p>RESULT:</p>
             <div class="product product-in-home-page">
-                <jsp:useBean id="producrList" class="ru.tilman.gb.ee.ProductsView" scope="request"/>
+                <jsp:useBean id="producrList" class="ru.tilman.gb.ee.controllers.ProductsController" scope="request"/>
                 <products:forEach items="${producrList.products}" var="product">
                     <div class="item">
                         <img class="item-product-img" src="${product.imgUrl}" alt="product 1 image">
