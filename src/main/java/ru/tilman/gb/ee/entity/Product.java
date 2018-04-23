@@ -5,22 +5,15 @@ import jdk.nashorn.internal.ir.annotations.Ignore;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.servlet.http.Part;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 @Entity
 public class Product extends AbstractEntity {
 
-
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String name;
 
-    @Column (nullable = false, length = 4000)
+    @Column(nullable = false, length = 4000)
     private String description;
 
     @ManyToOne

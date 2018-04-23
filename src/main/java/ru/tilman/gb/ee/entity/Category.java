@@ -26,24 +26,6 @@ public class Category extends AbstractEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products = new ArrayList<Product>();
 
-
-    public Category(String id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
-
-
-
-//    public Category(CategoryConverter categoryRecord) {
-//        this.id = categoryRecord.getId();
-//        this.name = categoryRecord.getName();
-//        this.description = categoryRecord.getDescription();
-//    }
-
-    public Category() {
-    }
-
     public String getName() {
         return name;
     }

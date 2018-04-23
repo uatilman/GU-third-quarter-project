@@ -39,16 +39,12 @@ public class CategoryDAO extends AbstractDAO {
         em.merge(category);
     }
 
-    public void removeCategory(Category category) {
-        if (category == null) return;
-        em.remove(category);
-    }
-
-    public void removeCategorytById(String categoryId) {
-        // TODO: 22.04.2018 проверка на товар с такой категорией или обработка ошибки удаления
-        if (categoryId == null || categoryId.isEmpty()) return;
-        Category category = em.find(Category.class, categoryId);
-        em.remove(category);
-    }
+//
+//    public void removeCategorytById(String categoryId) {
+//        // TODO: 22.04.2018 проверка на товар с такой категорией или обработка ошибки удаления
+//        if (categoryId == null || categoryId.isEmpty()) return;
+//        Category category = em.find(Category.class, categoryId);
+//        em.remove(category);
+//    }
 
 }

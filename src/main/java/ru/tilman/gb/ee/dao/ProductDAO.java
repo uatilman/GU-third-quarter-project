@@ -37,17 +37,10 @@ public class ProductDAO extends AbstractDAO {
         em.merge(product);
     }
 
-
-    // TODO: 21.04.2018 проверить
-    public void removeProduct(Product product) {
-        if (product == null) return;
-        em.remove(product);
-    }
-
-    public void removeProduct(String productId) {
-        if (productId == null || productId.isEmpty()) return;
-        Product product = em.find(Product.class, productId);
-        em.remove(product);
-    }
+//    public void removeProductById(String productId) {
+//        if (productId == null || productId.isEmpty()) return;
+//        Product product = em.find(Product.class, productId);
+//        em.remove(product);
+//    }
 
 }
