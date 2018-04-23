@@ -1,11 +1,6 @@
 package ru.tilman.gb.ee.entity;
 
-
-import jdk.nashorn.internal.ir.annotations.Ignore;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Product extends AbstractEntity {
@@ -18,6 +13,8 @@ public class Product extends AbstractEntity {
 
     @ManyToOne
     private Category category;
+
+
 
     private String imgUrl;
 

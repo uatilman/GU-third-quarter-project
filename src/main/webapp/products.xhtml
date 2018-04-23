@@ -21,7 +21,6 @@
             <div class="product-table">
                 <h1><h:outputLabel value="Product table"/></h1>
                 <p:dataTable value="${productsController.products}" var="item" id="table" border="1">
-                    <!--<p:column styleClass="id-column" headerText="Id">${item.id}</p:column>-->
                     <p:column styleClass="category-column" headerText="Category">${item.category}</p:column>
                     <p:column styleClass="name-column" headerText="Name">${item.name}</p:column>
                     <p:column styleClass="description-column" headerText="Description">${item.description}</p:column>
@@ -32,7 +31,6 @@
                     <p:column styleClass="remove-column" headerText="Doing">
                         <p:commandLink value="remove" update="table" actionListener="#{productsController.removeProduct(item)}"/>
                         <br/>
-                        <!--<p:commandLink value="edit" outcome="edit.xhtml" update="table" action="#{productsController.edit(item)}">-->
                         <p:link value="edit" outcome="edit.xhtml" update="table">
                             <f:param name="id" value="#{item.id}"/>
                         </p:link>

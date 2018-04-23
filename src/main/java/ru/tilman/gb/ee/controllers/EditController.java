@@ -2,6 +2,7 @@ package ru.tilman.gb.ee.controllers;
 
 
 import ru.tilman.gb.ee.dao.ProductDAO;
+import ru.tilman.gb.ee.entity.AbstractEntity;
 import ru.tilman.gb.ee.entity.Product;
 
 import javax.annotation.PostConstruct;
@@ -20,16 +21,12 @@ public class EditController extends AbstractController {
 
     private Product product;
 
-//    @Inject
-//    private ProductsController productsController;
-
-
     @PostConstruct
     private void init() {
         product = productDAO.getProductById(id);
     }
 
-    public Product getProduct() {
+    public AbstractEntity getProduct() {
         return product;
     }
 
@@ -38,8 +35,6 @@ public class EditController extends AbstractController {
     }
 
     public String save() {
-//        productsView.getProducts().add(new Product(product.getName(), product.getDescription(), product.getImgUrl()));
-
         productDAO.merge(product);
         return "products.xhtml" +  "?faces-redirect=true";
     }

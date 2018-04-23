@@ -1,5 +1,6 @@
 package ru.tilman.gb.ee.dao;
 
+import ru.tilman.gb.ee.entity.AbstractEntity;
 import ru.tilman.gb.ee.entity.Product;
 
 import javax.ejb.Stateless;
@@ -18,29 +19,14 @@ public class ProductDAO extends AbstractDAO {
                 .setParameter("categoryId", categoryId).getResultList();
     }
 
-    public List<Product> getListProduct() {
-        return em.createQuery("SELECT e FROM Product e", Product.class).getResultList();
-    }
 
-    public void persist(Product product) {
-        if (product == null) return;
-        em.persist(product);
+        public List<Product> getListProduct() {
+        return em.createQuery("SELECT e FROM Product e", Product.class).getResultList();
     }
 
     public Product getProductById(String id) {
         if (id == null) return null;
         return em.find(Product.class, id);
     }
-
-    public void merge(Product product) {
-        if (product == null) return;
-        em.merge(product);
-    }
-
-//    public void removeProductById(String productId) {
-//        if (productId == null || productId.isEmpty()) return;
-//        Product product = em.find(Product.class, productId);
-//        em.remove(product);
-//    }
 
 }
