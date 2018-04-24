@@ -11,7 +11,7 @@
         <jsp:param name="menuname" value="ORDER"/>
     </jsp:include>    <main class="content">
         <div class="padding-site">
-            <p>order page</p>
+            <p>orderTable page</p>
         </div>
     </main>
     <jsp:include page="fragments/footer.jsp"/>

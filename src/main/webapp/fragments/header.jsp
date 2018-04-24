@@ -29,7 +29,7 @@
                 <%--<li><a class="active-link" <%= request.getAttribute("catalog-active-link") %>href="catalog">CATALOG</a></li>--%>
                 <%--<li><a class="active-link" <%= request.getAttribute("product-active-link") %>href="product">PRODUCT</a></li>--%>
                 <%--<li><a class="active-link" <%= request.getAttribute("cart-active-link") %>href="cart">CART</a></li>--%>
-                <%--<li><a class="active-link" <%= request.getAttribute("order-active-link") %>href="order">ORDER</a></li>--%>
+                <%--<li><a class="active-link" <%= request.getAttribute("orderTable-active-link") %>href="orderTable">ORDER</a></li>--%>
                 <%--<li><a class="active-link" href="contacts.jsp">CONTACT</a>--%>
                 <%--<li><a class="active-link" <%= request.getAttribute("tests-active-link") %> href="tests">TESTS</a>--%>
                 </li>

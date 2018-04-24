@@ -1,26 +1,21 @@
-package ru.tilman.gb.ee.controllers;
+package ru.tilman.gb.ee.controllers.products;
 
 
+import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.CategoryDAO;
 import ru.tilman.gb.ee.dao.ProductDAO;
 import ru.tilman.gb.ee.entity.Category;
 import ru.tilman.gb.ee.entity.Product;
 
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.convert.Converter;
-import javax.faces.convert.ConverterException;
 import javax.inject.Inject;
 import java.util.List;
-import java.util.function.Predicate;
 
 @ViewScoped
 @ManagedBean
-public class CreateController extends AbstractController {
+public class CreateProductController extends AbstractController {
 
 
     @Inject
@@ -35,7 +30,7 @@ public class CreateController extends AbstractController {
 
     @PostConstruct
     private void init() {
-        categories = categoryDAO.getCategories();
+        categories = categoryDAO.getListCategories();
         System.out.println("init");
     }
 

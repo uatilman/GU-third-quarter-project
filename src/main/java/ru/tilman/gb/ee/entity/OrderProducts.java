@@ -2,7 +2,6 @@ package ru.tilman.gb.ee.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.*;
 /*https://docs.oracle.com/javaee/7/api/javax/persistence/MapsId.html*/
 
 @Entity
@@ -13,8 +12,7 @@ public class OrderProducts implements Serializable {
     OrderProductsIds orderProductsIds;
     @MapsId("orderId")
     @ManyToOne
-    private
-    Orders orders;
+    private OrderTable orderTable;
 
     @MapsId("productId")
     @ManyToOne
@@ -32,12 +30,12 @@ public class OrderProducts implements Serializable {
         this.orderProductsIds = orderProductsIds;
     }
 
-    public Orders getOrders() {
-        return orders;
+    public OrderTable getOrderTable() {
+        return orderTable;
     }
 
-    public void setOrders(Orders orders) {
-        this.orders = orders;
+    public void setOrderTable(OrderTable orderTable) {
+        this.orderTable = orderTable;
     }
 
     public Product getProduct() {

@@ -31,7 +31,7 @@
                     <p:column styleClass="remove-column" headerText="Doing">
                         <p:commandLink value="remove" update="table" actionListener="#{productsController.removeProduct(item)}"/>
                         <br/>
-                        <!--<p:commandLink value="edit" outcome="edit.xhtml" update="table" action="#{productsController.edit(item)}">-->
+                        <!--<p:commandLink value="edit" outcome="editproduct.xhtml" update="table" action="#{productsController.edit(item)}">-->
                         <p:link value="edit" outcome="edit.xhtml" update="table">
                             <f:param name="id" value="#{item.id}"/>
                         </p:link>

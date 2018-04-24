@@ -43,7 +43,7 @@
                         &lt;div class="item"&gt;
                             &lt;img class="item-product-img" src="&lt;c:out value="&dollar;{productS.imgUrl}"/&gt;" alt="product 1 image"&gt;
                             &lt;div class="product-hover"&gt;
-                                &lt;a class="product-link" href="#"&gt;&lt;img src="img/arrow.png" alt="order button image"&gt;&lt;/a&gt;
+                                &lt;a class="product-link" href="#"&gt;&lt;img src="img/arrow.png" alt="orderTable button image"&gt;&lt;/a&gt;
                                 &lt;h3&gt;&lt;c:out value="&dollar;{productS}"/&gt;&lt;/h3&gt;
                                 &lt;p&gt;&lt;c:out value="&dollar;{productS.description}"/&gt;&lt;/p&gt;
                             &lt;/div&gt;
@@ -57,7 +57,7 @@
                     <div class="item">
                         <img class="item-product-img" src="<c:out value="${productS.imgUrl}"/>" alt="product 1 image">
                         <div class="product-hover">
-                            <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
+                            <a class="product-link" href="#"><img src="img/arrow.png" alt="orderTable button image"></a>
                             <h3><c:out value="${productS}"/></h3>
                             <p><c:out value="${productS.description}"/></p>
                         </div>
@@ -94,7 +94,7 @@
                     &lt;div class="item"&gt;
                         &lt;img class="item-product-img" src="&dollar;{product.imgUrl}" alt="product 1 image"&gt;
                         &lt;div class="product-hover"&gt;
-                            &lt;a class="product-link" href="#"&gt;&lt;img src="img/arrow.png" alt="order button image"&gt;&lt;/a&gt;
+                            &lt;a class="product-link" href="#"&gt;&lt;img src="img/arrow.png" alt="orderTable button image"&gt;&lt;/a&gt;
                             &lt;h3&gt;&dollar;{product}&lt;/h3&gt;
                             &lt;p&gt;&dollar;{product.description}&lt;/p&gt;
                         &lt;/div&gt;
@@ -103,12 +103,12 @@
             </code></pre>
             <p>RESULT:</p>
             <div class="product product-in-home-page">
-                <jsp:useBean id="producrList" class="ru.tilman.gb.ee.controllers.ProductsController" scope="request"/>
+                <jsp:useBean id="producrList" class="ru.tilman.gb.ee.controllers.products.ProductsController" scope="request"/>
                 <products:forEach items="${producrList.products}" var="product">
                     <div class="item">
                         <img class="item-product-img" src="${product.imgUrl}" alt="product 1 image">
                         <div class="product-hover">
-                            <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
+                            <a class="product-link" href="#"><img src="img/arrow.png" alt="orderTable button image"></a>
                             <h3>${product}</h3>
                             <p>${product.description}</p>
                         </div>

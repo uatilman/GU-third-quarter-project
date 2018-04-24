@@ -13,18 +13,10 @@ import java.util.List;
 @Stateless
 public class CategoryDAO extends AbstractDAO {
 
-    public List<Category> getCategories() {
+    public List<Category> getListCategories() {
         return em.createQuery("SELECT e FROM Category e", Category.class).getResultList();
-//                .stream()
-//                .map(CategoryConverter::new)
-//                .collect(Collectors.toList());
     }
 
-
-    public void persist(Category category) {
-        if (category == null) return;
-        em.persist(category);
-    }
 
     public Category getCategoryById(String id) {
         if (id == null) {
@@ -34,17 +26,5 @@ public class CategoryDAO extends AbstractDAO {
         return em.find(Category.class, id);
     }
 
-    public void merge(Category category) {
-        if (category == null) return;
-        em.merge(category);
-    }
-
-//
-//    public void removeCategorytById(String categoryId) {
-//        // TODO: 22.04.2018 проверка на товар с такой категорией или обработка ошибки удаления
-//        if (categoryId == null || categoryId.isEmpty()) return;
-//        Category category = em.find(Category.class, categoryId);
-//        em.remove(category);
-//    }
 
 }

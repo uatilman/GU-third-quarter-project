@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 public class Category extends AbstractEntity {
 
-    @Column(nullable = false)
+    @Column
     private String name;
 
     @Column

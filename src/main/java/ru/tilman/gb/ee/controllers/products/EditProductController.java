@@ -1,6 +1,7 @@
-package ru.tilman.gb.ee.controllers;
+package ru.tilman.gb.ee.controllers.products;
 
 
+import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.ProductDAO;
 import ru.tilman.gb.ee.entity.AbstractEntity;
 import ru.tilman.gb.ee.entity.Product;
@@ -12,7 +13,7 @@ import javax.inject.Inject;
 
 @ViewScoped
 @ManagedBean
-public class EditController extends AbstractController {
+public class EditProductController extends AbstractController {
 
     private final String id = getParamString("id");
 

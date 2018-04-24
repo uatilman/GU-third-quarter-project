@@ -36,8 +36,8 @@
                     <h2>Fishnet Chair</h2>
                     <h4>Hot Deal</h4>
                     <p class="price"> 36.7</p>
-                    <a class="order-button" href="#">Order Us <img src="img/arrow_white.png"
-                                                                   alt="order button image"></a>
+                    <a class="orderTable-button" href="#">Order Us <img src="img/arrow_white.png"
+                                                                   alt="orderTable button image"></a>
                     <div class="product-description-text">
                         <p>The majesty of&nbsp;Mountains&nbsp;&mdash; Ugmonk style.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do&nbsp;eiusmod tempor

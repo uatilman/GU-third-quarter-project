@@ -51,7 +51,7 @@
                     <h2>Fishnet Chair</h2>
                     <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available
                         in&nbsp;matt</p>
-                    <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="order button image"></a>
+                    <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
                 </div>
             </div>
             <div class="exclusive-item">
@@ -61,7 +61,7 @@
                     <h2>Fishnet Chair</h2>
                     <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available
                         in&nbsp;matt</p>
-                    <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="order button image"></a>
+                    <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
                 </div>
             </div>
         </div>

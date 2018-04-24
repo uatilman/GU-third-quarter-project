@@ -10,7 +10,6 @@ public class OrderProductsIds implements Serializable {
     private String orderId;
     private String productId;
 
-
     public OrderProductsIds() {
     }
 
