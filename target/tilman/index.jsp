@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Interior</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-            integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-            crossorigin="anonymous"></script>
-</head>
+<jsp:include page="fragments/head.jsp">
+    <jsp:param name="title" value="Interior"/>
+</jsp:include>
 <body>
 <div class="container">
     <div class="slider">
-        <%@include file="head.jsp" %>
-
+        <jsp:include page="fragments/header.jsp">
+            <jsp:param name="menuname" value="HOME"/>
+        </jsp:include>
         <div class="header-text padding-site">
             <h4>TRENDING</h4>
             <h2>Fishnet Chair</h2>
             <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt</p>
-            <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="order button image"></a>
+            <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
         </div>
         <div class="pagination">
             <a href="#" class="circle"></a>
@@ -41,14 +37,14 @@
                 <div class="item">
                     <img class="item-product-img"  src="img/product-1.jpg" alt="product 1 image">
                     <div class="product-hover">
-                        <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
+                        <a class="product-link" href="#"><img src="img/arrow.png" alt="orderTable button image"></a>
                         <h3>Fishnet Chair</h3>
                         <p>Seat and back with upholstery made of&nbsp;cold cure foam</p>
                     </div>
                 </div>
                 <div class="item"><img class="item-product-img" src="img/product-3.jpg" alt="product 3  image">
                     <div class="product-hover">
-                        <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
+                        <a class="product-link" href="#"><img src="img/arrow.png" alt="orderTable button image"></a>
                         <h3>Fishnet Chair</h3>
                         <p>Seat and back with upholstery made of&nbsp;cold cure foam</p>
                     </div>
@@ -57,7 +53,7 @@
                     <img class="item-product-img" src="img/product-3.jpg" alt="product 4 image">
                     <div class="product-hover">
                         <a class="product-link" href="product"><img src="img/arrow.png"
-                                                                    alt="order button image"></a>
+                                                                    alt="orderTable button image"></a>
                         <h3>Fishnet Chair 3</h3>
                         <p>Seat and back with upholstery 111 made of&nbsp;cold cure foam</p>
                     </div>
@@ -65,7 +61,7 @@
                 <div class="item">
                     <img class="item-product-img" src="img/product1.jpg" alt="product - image">
                     <div class="product-hover">
-                        <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
+                        <a class="product-link" href="#"><img src="img/arrow.png" alt="orderTable button image"></a>
                         <h3>Fishnet Chair</h3>
                         <p>Seat and back with upholstery made of&nbsp;cold cure foam</p>
                     </div>
@@ -80,7 +76,7 @@
                     <h2>Fishnet Chair</h2>
                     <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt
                     </p>
-                    <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="order button image"></a>
+                    <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
                 </div>
             </div>
             <div class="exclusive-item">
@@ -90,7 +86,7 @@
                     <h2>Fishnet Chair</h2>
                     <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt
                     </p>
-                    <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="order button image"></a>
+                    <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
                 </div>
             </div>
         </div>
@@ -118,7 +114,7 @@
                 <h4>Hot deal</h4>
                 <h2>Fishnet Chair</h2>
                 <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt</p>
-                <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="order button image"></a>
+                <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
             </div>
             <div class="pagination">
                 <a href="#" class="circle"></a>
@@ -134,7 +130,7 @@
                     <h2>Fishnet Chair</h2>
                     <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt
                     </p>
-                    <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="order button image"></a>
+                    <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
                 </div>
             </div>
 
@@ -158,7 +154,7 @@
             </div>
         </div>
     </main>
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="fragments/footer.jsp"/>
 </div>
 </body>
 </html>

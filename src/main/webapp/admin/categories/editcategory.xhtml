@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+>
+<h:head>
+    <title>Add Category</title>
+    <link rel="stylesheet" href="../../style.css"/>
+
+</h:head>
+<h:body>
+
+    <br/>
+    <br/>
+    <h:form>
+        <h1>Add Category</h1>
+        <p:outputPanel>
+            <p:outputLabel value="name"/>
+        </p:outputPanel>
+        <p:outputPanel>
+            <p:inputText value="#{editCategoryController.category.name}"/>
+        </p:outputPanel>
+
+        <p:outputPanel>
+            <p:outputLabel value="description"/>
+        </p:outputPanel>
+        <p:outputPanel>
+            <p:inputText value="#{editCategoryController.category.description}"/>
+        </p:outputPanel>
+
+        <br/>
+        <br/>
+
+        <p:outputPanel>
+            <p:commandButton value="save" action="#{editCategoryController.save}"/>
+        </p:outputPanel>
+    </h:form>
+
+</h:body>
+</html>

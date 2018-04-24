@@ -4,21 +4,21 @@
 <%@ taglib prefix="m" uri="/WEB-INF/tags.tld" %>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tests</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="prism.css">
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-            integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-            crossorigin="anonymous"></script>
+<jsp:include page="fragments/head.jsp">
+    <jsp:param name="title" value="Tests"/>
+</jsp:include>
 
-</head>
 <body>
-<script src="prism.js"></script>
+<script src="js/prism.js"></script>
 <div class="container">
-    <jsp:include page="head.jsp"/>
+    <%--// c передачей переменной см. урок 4  27.47--%>
+    <%--// xhtml jsf 42:48 - end--%>
+    <%--экспорт в эксель 1:26--%>
+    <jsp:include page="fragments/header.jsp">
+        <jsp:param name="menuname" value="TESTS"/>
+    </jsp:include>
+
     <main class="content">
         <div class="padding-site">
             <h1>Test page</h1>
@@ -43,7 +43,7 @@
                         &lt;div class="item"&gt;
                             &lt;img class="item-product-img" src="&lt;c:out value="&dollar;{productS.imgUrl}"/&gt;" alt="product 1 image"&gt;
                             &lt;div class="product-hover"&gt;
-                                &lt;a class="product-link" href="#"&gt;&lt;img src="img/arrow.png" alt="order button image"&gt;&lt;/a&gt;
+                                &lt;a class="product-link" href="#"&gt;&lt;img src="img/arrow.png" alt="orderTable button image"&gt;&lt;/a&gt;
                                 &lt;h3&gt;&lt;c:out value="&dollar;{productS}"/&gt;&lt;/h3&gt;
                                 &lt;p&gt;&lt;c:out value="&dollar;{productS.description}"/&gt;&lt;/p&gt;
                             &lt;/div&gt;
@@ -57,7 +57,7 @@
                     <div class="item">
                         <img class="item-product-img" src="<c:out value="${productS.imgUrl}"/>" alt="product 1 image">
                         <div class="product-hover">
-                            <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
+                            <a class="product-link" href="#"><img src="img/arrow.png" alt="orderTable button image"></a>
                             <h3><c:out value="${productS}"/></h3>
                             <p><c:out value="${productS.description}"/></p>
                         </div>
@@ -65,11 +65,6 @@
                 </c:forEach>
             </div>
 
-            <h2>Создание собственного тега</h2>
-            <m:test-tag basic="я значение basic атрибута"/>
-
-            <br>
-            <br>
             <h2>Использование Java Bean для создания списка продуктов</h2>
             <pre><code class="language-java">
                 //JAVA
@@ -99,7 +94,7 @@
                     &lt;div class="item"&gt;
                         &lt;img class="item-product-img" src="&dollar;{product.imgUrl}" alt="product 1 image"&gt;
                         &lt;div class="product-hover"&gt;
-                            &lt;a class="product-link" href="#"&gt;&lt;img src="img/arrow.png" alt="order button image"&gt;&lt;/a&gt;
+                            &lt;a class="product-link" href="#"&gt;&lt;img src="img/arrow.png" alt="orderTable button image"&gt;&lt;/a&gt;
                             &lt;h3&gt;&dollar;{product}&lt;/h3&gt;
                             &lt;p&gt;&dollar;{product.description}&lt;/p&gt;
                         &lt;/div&gt;
@@ -108,18 +103,36 @@
             </code></pre>
             <p>RESULT:</p>
             <div class="product product-in-home-page">
-                <jsp:useBean id="producrList" class="ru.tilman.gb.ee.ProductsView" scope="request"/>
+                <jsp:useBean id="producrList" class="ru.tilman.gb.ee.controllers.products.ProductsController" scope="request"/>
                 <products:forEach items="${producrList.products}" var="product">
                     <div class="item">
                         <img class="item-product-img" src="${product.imgUrl}" alt="product 1 image">
                         <div class="product-hover">
-                            <a class="product-link" href="#"><img src="img/arrow.png" alt="order button image"></a>
+                            <a class="product-link" href="#"><img src="img/arrow.png" alt="orderTable button image"></a>
                             <h3>${product}</h3>
                             <p>${product.description}</p>
                         </div>
                     </div>
                 </products:forEach>
             </div>
+            <br>
+            <br>
+            <h2>Создание собственного тега</h2>
+            <m:test-tag basic="я значение basic атрибута"/>
+            <br>
+            <br>
+
+            <h3>Изучаю pageContext</h3>
+            <ol>
+                <li>${pageContext.request.contextPath}</li>
+                <li>${pageContext.request.localAddr}</li>
+                <li>${pageContext.request.getAttribute("url")}</li>
+                <li>${pageContext.request.getContextPath()}</li>
+                <li>${pageContext.request.getPathInfo()}</li>
+                <li>${pageContext.request.getRequestURI()}</li>
+                <li>${pageContext.request.getRequestURL()}</li>
+                <li>${pageContext.request.getServletPath()}</li>
+            </ol>
             <br>
             <br>
             <h3>Сервлеты</h3>
@@ -199,7 +212,7 @@
             &lt; &gt;
         </div>
     </main>
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="fragments/footer.jsp"/>
 
 </div>
 </body>

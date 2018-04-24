@@ -987,3 +987,35 @@ button .svg-inline--fa.fa-w-14:hover {
     margin-top: 100px;
     margin-bottom: 100px;
 }
+
+.product-table {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.product-table .category-column {
+    width: 70px;
+}
+
+.product-table .name-column {
+    width: 100px;
+}
+
+.product-table .description-column {
+    width: 306px;
+}
+
+.product-table .image-column {
+    width: 100px;
+}
+
+.product-table .image-column img {
+    width: 98px;
+}
+
+.product-table .remove-column {
+    width: 100px;
+    text-align: center;
+}
