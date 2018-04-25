@@ -15,24 +15,25 @@
 </composite:interface>
 
 <composite:implementation>
-        <header jsf:id="header" class="padding-site">
-            <div class="header">
-                <a href="${request.contextPath}/" class="logo">
-                    <img src="${request.contextPath}/img/logo.png" alt="logo"/>
-                </a>
-                <nav jsf:id="nav">
+    <header jsf:id="header" class="padding-site">
+        <div class="header">
+            <a href="${request.contextPath}/" class="logo">
+                <img src="${request.contextPath}/img/logo.png" alt="logo"/>
+            </a>
+            <nav jsf:id="nav">
 
-                    <p:dataList value="${menuController.menuItems()}">
+                <p:dataList>
 
-
-
+                    <ul>
                         <li><a href="${request.contextPath}/admin/products/products.xhtml">PRODUCTS</a></li>
                         <li><a href="${request.contextPath}/admin/categories/categories.xhtml">CATEGORIES</a></li>
                         <li><a href="${request.contextPath}/admin/orders/orders.xhtml">ORDERS</a></li>
-                    </p:dataList>
-                </nav>
-            </div>
-        </header>
+                    </ul>
+
+                </p:dataList>
+            </nav>
+        </div>
+    </header>
 </composite:implementation>
 
 
