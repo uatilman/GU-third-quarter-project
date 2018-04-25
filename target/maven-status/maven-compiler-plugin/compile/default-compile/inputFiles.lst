@@ -1,3 +1,4 @@
+/home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/controllers/MenuController.java
 /home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/entity/OrderProductsIds.java
 /home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/patterns/users/AuthorizedUser.java
 /home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/garbage/CategoryConverter.java
@@ -27,6 +28,8 @@
 /home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/patterns/Product.java
 /home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/controllers/products/EditProductController.java
 /home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/controllers/OrderController.java
+/home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/entity/MenuItems.java
+/home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/dao/MenuDao.java
 /home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/patterns/users/UsersType.java
 /home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/servlet/CartServlet.java
 /home/tilman/javaProjects/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/entity/AbstractEntity.java

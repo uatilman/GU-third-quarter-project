@@ -7,11 +7,8 @@ import java.util.List;
 @Entity
 public class Category extends AbstractEntity {
 
-    @Column
-    private String name;
-
-    @Column
-    private String description;
+    @Column private String name;
+    @Column private String description;
 
     /**
      * FetchType.LAZY - загрузка по требованию, т.е. коллекция по умолчанию неквытягивается
