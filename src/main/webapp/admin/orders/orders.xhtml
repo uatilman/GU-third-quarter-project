@@ -3,45 +3,48 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui"
->
-<h:head>
-    <title>Orders table</title>
-    <link rel="stylesheet" href="../../style.css"/>
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:custom="http://java.sun.com/jsf/composite/fragments">
 
-</h:head>
-<h:body>
 
-    <br/>
-    <br/>
-    <h:form>
-        <div class="padding-site">
-            <div class="product-table">
-                <h1><h:outputLabel value="Orders table"/></h1>
-                <p:dataTable value="${orderController.orders}" var="item" id="table" border="1">
-                    <p:column styleClass="orderTable-id" headerText="Id">${item.id}</p:column>
-                    <p:column styleClass="orderTable-user-name" headerText="User">${item.userName}</p:column>
-                    <p:column styleClass="orderTable-phone" headerText="Phone">${item.phone}</p:column>
-                    <p:column styleClass="remove-column" headerText="Doing">
-                        <p:commandLink value="remove" update="table" actionListener="#{orderController.removeOrder(item)}"/>
-                        <br/>
-                        <p:link value="edit" update="table">
-                            <f:param name="id" value="#{item.id}"/>
-                        </p:link>
-                    </p:column>
-                </p:dataTable>
-                <br/>
-                <br/>
-                <p:outputPanel>
-                    <p:button value="NEW ORDER"/>
-                </p:outputPanel>
-            </div>
+<custom:head title="Orders table"/>
 
+<body jsf:id="body">
+<div class="container">
+<custom:header menu-uri="orders.xhtml"/>
+<br/>
+<br/>
+<h:form>
+    <div class="padding-site">
+        <div class="product-table">
+            <h1><h:outputLabel value="Orders table"/></h1>
+            <p:dataTable value="${orderController.orders}" var="item" id="table" border="1">
+                <p:column styleClass="orderTable-id" headerText="Id">${item.id}</p:column>
+                <p:column styleClass="orderTable-user-name" headerText="User">${item.userName}</p:column>
+                <p:column styleClass="orderTable-phone" headerText="Phone">${item.phone}</p:column>
+                <p:column styleClass="remove-column" headerText="Doing">
+                    <p:commandLink value="remove" update="table"
+                                   actionListener="#{orderController.removeOrder(item)}"/>
+                    <br/>
+                    <p:link value="edit" update="table">
+                        <f:param name="id" value="#{item.id}"/>
+                    </p:link>
+                </p:column>
+            </p:dataTable>
+            <br/>
+            <br/>
+            <p:outputPanel>
+                <p:button value="NEW ORDER"/>
+            </p:outputPanel>
         </div>
 
-    </h:form>
+    </div>
 
-</h:body>
+</h:form>
+</div>
+</body>
 </html>

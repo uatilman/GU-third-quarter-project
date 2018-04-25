@@ -25,13 +25,13 @@
                 </c:forEach>
 
 
-                <%--<li><a class="active-link" <%= request.getAttribute("main-active-link") %>href="${pageContext.request.contextPath}/">HOME</a></li>--%>
-                <%--<li><a class="active-link" <%= request.getAttribute("catalog-active-link") %>href="catalog">CATALOG</a></li>--%>
-                <%--<li><a class="active-link" <%= request.getAttribute("product-active-link") %>href="product">PRODUCT</a></li>--%>
-                <%--<li><a class="active-link" <%= request.getAttribute("cart-active-link") %>href="cart">CART</a></li>--%>
-                <%--<li><a class="active-link" <%= request.getAttribute("orderTable-active-link") %>href="orderTable">ORDER</a></li>--%>
-                <%--<li><a class="active-link" href="contacts.jsp">CONTACT</a>--%>
-                <%--<li><a class="active-link" <%= request.getAttribute("tests-active-link") %> href="tests">TESTS</a>--%>
+                <%--<li><a class="active-link" <%= request.getattribute("main-active-link") %>href="${pagecontext.request.contextpath}/">home</a></li>--%>
+                <%--<li><a class="active-link" <%= request.getattribute("catalog-active-link") %>href="catalog">catalog</a></li>--%>
+                <%--<li><a class="active-link" <%= request.getattribute("product-active-link") %>href="product">product</a></li>--%>
+                <%--<li><a class="active-link" <%= request.getattribute("cart-active-link") %>href="cart">cart</a></li>--%>
+                <%--<li><a class="active-link" <%= request.getattribute("ordertable-active-link") %>href="ordertable">order</a></li>--%>
+                <%--<li><a class="active-link" href="contacts.jsp">contact</a>--%>
+                <%--<li><a class="active-link" <%= request.getattribute("tests-active-link") %> href="tests">tests</a>--%>
                 </li>
             </ul>
         </nav>
