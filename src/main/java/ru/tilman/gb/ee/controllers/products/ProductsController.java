@@ -5,9 +5,16 @@ import ru.tilman.gb.ee.entity.AbstractEntity;
 import ru.tilman.gb.ee.entity.Product;
 
 import javax.faces.bean.*;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 /**
@@ -39,5 +46,20 @@ public class ProductsController implements Serializable {
         return new ArrayList<>(productDAO.getListProduct());
     }
 
+    public void printUserInfo() throws IOException {
+        HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
+        HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        Enumeration enumeration = request.getHeaderNames();
+        System.out.println("====================");
+        while (enumeration.hasMoreElements()) {
+            String header = (String) enumeration.nextElement();
+            System.out.println(header + ": " + request.getHeader(header));
+        }
+        System.out.println("====================wildfly");
+    }
 
 }
+//standalone.bat.lnk -b 0.0.0.0
+//standalone.bat.lnk -b=134.0.106.221
+//standalone.bat.lnk -b=192.168.1.1
+
