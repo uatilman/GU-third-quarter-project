@@ -68,9 +68,9 @@ body {
 }
 
 .menu {
-    display: flex;
-    list-style-type: none;
-    margin-top: 57px;
+    display: flex !important;
+    list-style-type: none !important;
+    margin-top: 57px !important;
 }
 
 .menu a {

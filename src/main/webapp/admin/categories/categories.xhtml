@@ -6,42 +6,43 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:custom="http://java.sun.com/jsf/composite/fragments"
 >
-<h:head>
-    <title>Product table</title>
-    <link rel="stylesheet" href="../../style.css"/>
 
-</h:head>
+<custom:head title="Product table"/>
+
 <h:body>
 
-    <br/>
-    <br/>
-    <h:form>
-        <div class="padding-site">
-            <div class="product-table">
-                <h1><h:outputLabel value="Category table"/></h1>
-                <p:dataTable value="${categoryController.categories}" var="item" id="table" border="1">
-                    <p:column styleClass="category-id" headerText="Name">${item.id}</p:column>
-                    <p:column styleClass="category-name" headerText="Name">${item.name}</p:column>
-                    <p:column styleClass="category-description" headerText="Description">${item.description}</p:column>
-                    <p:column styleClass="remove-column" headerText="Doing">
-                        <p:commandLink value="remove" update="table" actionListener="#{categoryController.removeCategory(item)}"/>
-                        <br/>
-                        <p:link value="edit" outcome="editcategory.xhtml" update="table">
-                            <f:param name="id" value="#{item.id}"/>
-                        </p:link>
-                    </p:column>
-                </p:dataTable>
-                <br/>
-                <br/>
-                <p:outputPanel>
-                    <p:button value="NEW CATEGORY" outcome="addcategory.xhtml"/>
-                </p:outputPanel>
+    <div class="container">
+        <custom:header menu-uri="categories.xhtml"/>
+
+        <h:form>
+            <div class="padding-site">
+                <div class="product-table">
+                    <h1><h:outputLabel value="Category table"/></h1>
+                    <p:dataTable value="${categoryController.categories}" var="item" id="table" border="1">
+                        <p:column styleClass="category-id" headerText="Name">${item.id}</p:column>
+                        <p:column styleClass="category-name" headerText="Name">${item.name}</p:column>
+                        <p:column styleClass="category-description"
+                                  headerText="Description">${item.description}</p:column>
+                        <p:column styleClass="remove-column" headerText="Doing">
+                            <p:commandLink value="remove" update="table"
+                                           actionListener="#{categoryController.removeCategory(item)}"/>
+                            <br/>
+                            <p:link value="edit" outcome="editcategory.xhtml" update="table">
+                                <f:param name="id" value="#{item.id}"/>
+                            </p:link>
+                        </p:column>
+                    </p:dataTable>
+                    <br/>
+                    <br/>
+                    <p:outputPanel>
+                        <p:button value="NEW CATEGORY" outcome="addcategory.xhtml"/>
+                    </p:outputPanel>
+                </div>
             </div>
 
-        </div>
-
-    </h:form>
-
+        </h:form>
+    </div>
 </h:body>
 </html>

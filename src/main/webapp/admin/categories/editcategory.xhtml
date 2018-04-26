@@ -6,39 +6,38 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:custom="http://java.sun.com/jsf/composite/fragments"
 >
-<h:head>
-    <title>Add Category</title>
-    <link rel="stylesheet" href="../../style.css"/>
 
-</h:head>
+<custom:head title="Add Category"/>
+
 <h:body>
+    <div class="container">
+        <custom:header menu-uri="editcategory.xhtml"/>
 
-    <br/>
-    <br/>
-    <h:form>
-        <h1>Add Category</h1>
-        <p:outputPanel>
-            <p:outputLabel value="name"/>
-        </p:outputPanel>
-        <p:outputPanel>
-            <p:inputText value="#{editCategoryController.category.name}"/>
-        </p:outputPanel>
+        <h:form>
+            <h1>Add Category</h1>
+            <p:outputPanel>
+                <p:outputLabel value="name"/>
+            </p:outputPanel>
+            <p:outputPanel>
+                <p:inputText value="#{editCategoryController.category.name}"/>
+            </p:outputPanel>
 
-        <p:outputPanel>
-            <p:outputLabel value="description"/>
-        </p:outputPanel>
-        <p:outputPanel>
-            <p:inputText value="#{editCategoryController.category.description}"/>
-        </p:outputPanel>
+            <p:outputPanel>
+                <p:outputLabel value="description"/>
+            </p:outputPanel>
+            <p:outputPanel>
+                <p:inputText value="#{editCategoryController.category.description}"/>
+            </p:outputPanel>
 
-        <br/>
-        <br/>
+            <br/>
+            <br/>
 
-        <p:outputPanel>
-            <p:commandButton value="save" action="#{editCategoryController.save}"/>
-        </p:outputPanel>
-    </h:form>
-
+            <p:outputPanel>
+                <p:commandButton value="save" action="#{editCategoryController.save}"/>
+            </p:outputPanel>
+        </h:form>
+    </div>
 </h:body>
 </html>
