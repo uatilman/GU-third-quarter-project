@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:custom="http://java.sun.com/jsf/composite/fragments">
+
+
+<custom:head title="Orders table"/>
+
+<body>
+
+<div class="container">
+<custom:header menuuri="orders.xhtml"/>
+
+<h:form>
+    <div class="padding-site">
+        <div class="product-table">
+            <h1><h:outputLabel value="Orders table"/></h1>
+            <p:dataTable value="${orderProductController.products}" var="item" id="table" border="1">
+                <p:column headerText="Name">${item.name}</p:column>
+                <p:column headerText="Count">${item.name}</p:column>
+            </p:dataTable>
+            <br/>
+            <br/>
+            <p:outputPanel>
+                <p:button value="NEW ORDER"/>
+            </p:outputPanel>
+        </div>
+
+    </div>
+
+</h:form>
+</div>
+</body>
+</html>

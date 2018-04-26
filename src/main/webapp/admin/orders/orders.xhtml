@@ -22,15 +22,16 @@
     <div class="padding-site">
         <div class="product-table">
             <h1><h:outputLabel value="Orders table"/></h1>
-            <p:dataTable value="${orderController.orders}" var="item" id="table" border="1">
+            <p:dataTable value="${ordersController.orders}" var="item" id="table" border="1">
                 <p:column styleClass="orderTable-id" headerText="Id">${item.id}</p:column>
                 <p:column styleClass="orderTable-user-name" headerText="User">${item.userName}</p:column>
                 <p:column styleClass="orderTable-phone" headerText="Phone">${item.phone}</p:column>
                 <p:column styleClass="remove-column" headerText="Doing">
                     <p:commandLink value="remove" update="table"
-                                   actionListener="#{orderController.removeOrder(item)}"/>
+                                   actionListener="#{ordersController.removeOrder(item)}"/>
                     <br/>
-                    <p:link value="edit" update="table">
+
+                    <p:link value="edit" outcome="order.xhtml" update="table">
                         <f:param name="id" value="#{item.id}"/>
                     </p:link>
                 </p:column>
@@ -38,8 +39,9 @@
             <br/>
             <br/>
             <p:outputPanel>
-                <p:button value="NEW ORDER"/>
+                <p:commandLink value="NEW ORDER" />
             </p:outputPanel>
+            <p>${orderProductController.products}</p>
         </div>
 
     </div>

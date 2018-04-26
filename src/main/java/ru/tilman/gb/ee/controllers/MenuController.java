@@ -15,7 +15,7 @@ import java.util.List;
 
 @ManagedBean
 @ApplicationScoped
-public class MenuController {
+public class MenuController extends AbstractController {
 
     @Inject
     private MenuDao menuDao;
@@ -25,7 +25,7 @@ public class MenuController {
     }
 
     public String getStyleClass(String itemUri) {
-        HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        HttpServletRequest request = getHttpServletRequest();
 
 
         String pageName = request

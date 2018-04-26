@@ -15,7 +15,6 @@ public class Product extends AbstractEntity {
     private Category category;
 
 
-
     private String imgUrl;
 
     public Category getCategory() {
@@ -57,6 +56,6 @@ public class Product extends AbstractEntity {
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", imgUrl='" + imgUrl + '\'' +
-                '}';
+                '}' + "\n";
     }
 }
