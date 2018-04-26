@@ -27,6 +27,7 @@ public class OrderProductDAO extends AbstractDAO {
         List<Object[]> list1 = query.getResultList();
         System.out.println("length list1" + list1.size());
 
+
         List<Product> list = em.createQuery(
                 "SELECT product " +
                         "FROM OrderProducts orderproducts " +
