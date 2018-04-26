@@ -12,7 +12,7 @@
       xmlns:c="http://java.sun.com/jsp/jstl/core"
 >
 <composite:interface>
-    <composite:attribute name="menu-uri" required="true" type="java.lang.String"/>
+    <composite:attribute name="menuuri" required="true" type="java.lang.String"/>
 </composite:interface>
 
 <composite:implementation>
@@ -23,12 +23,11 @@
                     <img src="${request.contextPath}/img/logo.png" alt="logo"/>
                 </a>
 
-
                 <nav jsf:id="nav">
                     <ul class="menu">
                         <ui:repeat value="${menuController.menuItems}" var="item">
-                            <li><a class="${menuController.getStyleClass(item.url)}"
-                                   href="${request.contextPath}/admin/${item.url}">#{item.name}</a></li>
+                            <li><a class="${menuController.getStyleByAttributeName(item.url, cc.attrs.menuuri)}"
+                                   href="${request.contextPath}/admin/${item.url}">${item.name}</a></li>
                         </ui:repeat>
                     </ul>
                 </nav>
