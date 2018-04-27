@@ -1,5 +1,6 @@
 package ru.tilman.gb.ee.controllers;
 
+import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.dao.MenuDao;
 import ru.tilman.gb.ee.entity.MenuItems;
 
@@ -7,6 +8,7 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
@@ -20,13 +22,14 @@ public class MenuController extends AbstractController {
     @Inject
     private MenuDao menuDao;
 
+    @Interceptors(ProjectLogger.class)
     public List<MenuItems> getMenuItems() {
         return new ArrayList<>(menuDao.getMenuList());
     }
 
+    @Interceptors(ProjectLogger.class)
     public String getStyleClass(String itemUri) {
         HttpServletRequest request = getHttpServletRequest();
-
 
         String pageName = request
                 .getRequestURI()
@@ -38,14 +41,12 @@ public class MenuController extends AbstractController {
                         itemUri.lastIndexOf("/") + 1,
                         itemUri.lastIndexOf(".xhtml") + 6);
 
-
-        System.out.println(pageName + "+++" + pagItemName);
-        System.out.println(pageName.equals(pagItemName));
         if (pageName.equals(pagItemName))
             return "active-link";
         return "";
     }
 
+    @Interceptors(ProjectLogger.class)
     public String getStyleByAttributeName(String itemUri, String attributeURI) {
         String tagItemName = itemUri
                 .substring(

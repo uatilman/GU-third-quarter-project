@@ -5,7 +5,7 @@ import java.io.Serializable;
 /*https://docs.oracle.com/javaee/7/api/javax/persistence/MapsId.html*/
 
 @Entity
-public class OrderProducts implements Serializable {
+public class OrderProducts extends AbstractEntity {
 
     @EmbeddedId
     private

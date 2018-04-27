@@ -1,5 +1,7 @@
 package ru.tilman.gb.ee.controllers.products;
 
+import ru.tilman.gb.ee.ProjectLogger;
+import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.ProductDAO;
 import ru.tilman.gb.ee.entity.AbstractEntity;
 import ru.tilman.gb.ee.entity.Product;
@@ -7,6 +9,7 @@ import ru.tilman.gb.ee.entity.Product;
 import javax.faces.bean.*;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,29 +36,28 @@ import java.util.List;
  */
 @ManagedBean
 @ApplicationScoped
-public class ProductsController implements Serializable {
+public class ProductsController extends AbstractController {
 
     @Inject
     private ProductDAO productDAO;
 
+    @Interceptors(ProjectLogger.class)
     public void removeProduct(Product product) {
         productDAO.removeById(product.getId(), product.getClass());
     }
 
+    @Interceptors(ProjectLogger.class)
     public List<Product> getProducts() {
         return new ArrayList<>(productDAO.getListProduct());
     }
 
+    @Interceptors(ProjectLogger.class)
     public void printUserInfo() throws IOException {
-        HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
-        HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
         Enumeration enumeration = request.getHeaderNames();
-        System.out.println("====================");
         while (enumeration.hasMoreElements()) {
             String header = (String) enumeration.nextElement();
             System.out.println(header + ": " + request.getHeader(header));
         }
-        System.out.println("====================wildfly");
     }
 
 }

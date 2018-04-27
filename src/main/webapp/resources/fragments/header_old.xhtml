@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+>
+<composite:interface>
+    <composite:attribute name="menu-uri" type="java.lang.String"/>
+</composite:interface>
+
+<composite:implementation>
+    <header jsf:id="header" class="padding-site">
+        <div class="header">
+            <a href="${request.contextPath}/" class="logo">
+                <img src="${request.contextPath}/img/logo.png" alt="logo"/>
+            </a>
+            <nav jsf:id="nav">
+                <ul class="menu">
+                    <li><a href="${request.contextPath}/admin/products/products.xhtml">PRODUCTS</a></li>
+                    <li><a href="${request.contextPath}/admin/categories/categories.xhtml">CATEGORIES</a></li>
+                    <li><a href="${request.contextPath}/admin/orders/orders.xhtml">ORDERS</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <p:dataList value="${menuController.menuItems}" var="item" styleClass="menu">
+            <li><a href="${request.contextPath}/admin/products/${item.url}">#{item.name}</a></li>
+        </p:dataList>
+
+        <ul class="menu">
+        <ui:repeat value="${menuController.menuItems}" var="item">
+            <li><a class="${menuController.getStyleClass(item.url, cc.attrs.menu-uri)}"
+                   href="${request.contextPath}/admin/products/${item.url}">#{item.name}</a></li>
+        </ui:repeat>
+
+    </header>
+</composite:implementation>
+
+
+</html>
