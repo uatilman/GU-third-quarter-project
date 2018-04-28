@@ -1,15 +1,21 @@
 package ru.tilman.gb.ee.entity;
 
+import ru.tilman.gb.ee.ProjectLogger;
+
+import javax.faces.bean.SessionScoped;
+import javax.interceptor.Interceptors;
 import javax.persistence.*;
 import java.io.Serializable;
 /*https://docs.oracle.com/javaee/7/api/javax/persistence/MapsId.html*/
 
+@SessionScoped
 @Entity
+@Interceptors(ProjectLogger.class)
 public class OrderProducts extends AbstractEntity {
 
     @EmbeddedId
-    private
-    OrderProductsIds orderProductsIds;
+    private OrderProductsIds orderProductsIds;
+
     @MapsId("orderId")
     @ManyToOne
     private OrderTable orderTable;
@@ -53,4 +59,6 @@ public class OrderProducts extends AbstractEntity {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+
 }

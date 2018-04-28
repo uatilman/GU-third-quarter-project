@@ -1,8 +1,12 @@
 package ru.tilman.gb.ee.entity;
 
+import ru.tilman.gb.ee.ProjectLogger;
+
+import javax.interceptor.Interceptors;
 import javax.persistence.*;
 
 @Entity
+@Interceptors(ProjectLogger.class)
 public class MenuItems extends AbstractEntity {
 
     @Column private String name;

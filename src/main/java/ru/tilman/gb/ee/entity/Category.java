@@ -1,10 +1,14 @@
 package ru.tilman.gb.ee.entity;
 
+import ru.tilman.gb.ee.ProjectLogger;
+
+import javax.interceptor.Interceptors;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Interceptors(ProjectLogger.class)
 public class Category extends AbstractEntity {
 
     @Column private String name;

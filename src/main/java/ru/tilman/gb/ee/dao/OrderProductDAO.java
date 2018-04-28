@@ -1,21 +1,15 @@
 package ru.tilman.gb.ee.dao;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
 import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.entity.*;
-
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
-import java.util.HashMap;
 import java.util.List;
 
 @Stateless
+@Interceptors(ProjectLogger.class)
 public class OrderProductDAO extends AbstractDAO {
 
-    @Interceptors(ProjectLogger.class)
     public List<OrderProducts> getOrderProductsListByOrderId(String id) {
         List<OrderProducts> list = em.createQuery(
                 "SELECT orderproducts " +
@@ -39,7 +33,6 @@ public class OrderProductDAO extends AbstractDAO {
 //                        "LIKE :id").setParameter("id", "111").getResultList();
     }
 
-    @Interceptors(ProjectLogger.class)
     public List<Product> getListProductsByOrderId(String id) {
 
         return em.createQuery(
@@ -49,7 +42,6 @@ public class OrderProductDAO extends AbstractDAO {
 
     }
 
-    @Interceptors(ProjectLogger.class)
     public OrderProducts OrderProductsBiId(String id) {
         if (id == null) return null;
         return em.find(OrderProducts.class, id);

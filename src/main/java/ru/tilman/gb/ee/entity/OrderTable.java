@@ -1,5 +1,8 @@
 package ru.tilman.gb.ee.entity;
 
+import ru.tilman.gb.ee.ProjectLogger;
+
+import javax.interceptor.Interceptors;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashMap;
@@ -7,6 +10,7 @@ import java.util.Map;
 
 
 @Entity
+@Interceptors(ProjectLogger.class)
 public class OrderTable extends AbstractEntity {
 
     @Column
