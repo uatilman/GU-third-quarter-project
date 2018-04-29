@@ -1,11 +1,16 @@
 package ru.tilman.gb.ee.entity;
 
+import ru.tilman.gb.ee.ProjectLogger;
+
+import javax.interceptor.Interceptors;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
 /*https://docs.oracle.com/javaee/7/api/javax/persistence/MapsId.html*/
+
 @Embeddable
+@Interceptors(ProjectLogger.class)
 public class OrderProductsIds implements Serializable {
     private String orderId;
     private String productId;

@@ -1,9 +1,11 @@
 package ru.tilman.gb.ee.dao;
 
+import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.entity.AbstractEntity;
 import ru.tilman.gb.ee.entity.Product;
 
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import java.util.List;
 
 /**
@@ -12,6 +14,7 @@ import java.util.List;
  * не хранит в себе состояний, для созданных полей не гарантированно сохранение состояний
  */
 @Stateless
+@Interceptors(ProjectLogger.class)
 public class ProductDAO extends AbstractDAO {
 
 

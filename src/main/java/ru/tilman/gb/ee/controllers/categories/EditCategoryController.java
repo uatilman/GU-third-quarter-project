@@ -1,6 +1,7 @@
 package ru.tilman.gb.ee.controllers.categories;
 
 
+import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.CategoryDAO;
 import ru.tilman.gb.ee.dao.ProductDAO;
@@ -12,9 +13,11 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 
 @ViewScoped
 @ManagedBean
+@Interceptors(ProjectLogger.class)
 public class EditCategoryController extends AbstractController {
 
     private final String id = getParamString("id");

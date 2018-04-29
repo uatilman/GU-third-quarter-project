@@ -17,6 +17,7 @@ import java.util.List;
 
 @ManagedBean
 @ViewScoped
+@Interceptors(ProjectLogger.class)
 public class OrderProductController extends AbstractController {
 
     private final String id = getParamString("id");
@@ -32,13 +33,11 @@ public class OrderProductController extends AbstractController {
 //        orderProductsList = orderProductDAO.getOrderProductsListByOrderId(id);
 //    }
 
-    @Interceptors(ProjectLogger.class)
     public List<OrderProducts> getOrderProducts() {
          return new ArrayList<>(orderProductDAO.getOrderProductsListByOrderId(id));
 
     }
 
-    @Interceptors(ProjectLogger.class)
     public void save(OrderProducts orderProduct) {
         orderProductDAO.merge(orderProduct);
     }

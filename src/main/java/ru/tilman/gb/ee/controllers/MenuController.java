@@ -17,17 +17,16 @@ import java.util.List;
 
 @ManagedBean
 @ApplicationScoped
+@Interceptors(ProjectLogger.class)
 public class MenuController extends AbstractController {
 
     @Inject
     private MenuDao menuDao;
 
-    @Interceptors(ProjectLogger.class)
     public List<MenuItems> getMenuItems() {
         return new ArrayList<>(menuDao.getMenuList());
     }
 
-    @Interceptors(ProjectLogger.class)
     public String getStyleClass(String itemUri) {
         HttpServletRequest request = getHttpServletRequest();
 
@@ -46,7 +45,6 @@ public class MenuController extends AbstractController {
         return "";
     }
 
-    @Interceptors(ProjectLogger.class)
     public String getStyleByAttributeName(String itemUri, String attributeURI) {
         String tagItemName = itemUri
                 .substring(

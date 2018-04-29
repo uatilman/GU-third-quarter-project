@@ -36,22 +36,20 @@ import java.util.List;
  */
 @ManagedBean
 @ApplicationScoped
+@Interceptors(ProjectLogger.class)
 public class ProductsController extends AbstractController {
 
     @Inject
     private ProductDAO productDAO;
 
-    @Interceptors(ProjectLogger.class)
     public void removeProduct(Product product) {
         productDAO.removeById(product.getId(), product.getClass());
     }
 
-    @Interceptors(ProjectLogger.class)
     public List<Product> getProducts() {
         return new ArrayList<>(productDAO.getListProduct());
     }
 
-    @Interceptors(ProjectLogger.class)
     public void printUserInfo() throws IOException {
         Enumeration enumeration = request.getHeaderNames();
         while (enumeration.hasMoreElements()) {
