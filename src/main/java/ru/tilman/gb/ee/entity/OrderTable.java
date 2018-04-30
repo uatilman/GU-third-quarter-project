@@ -49,4 +49,14 @@ public class OrderTable extends AbstractEntity {
         this.phone = phone;
     }
 
+    // Класс для курса по паттернам
+    public static OrderTable getTestOrderTable(String userName, String phone, Date date) {
+        OrderTable orderTable = new OrderTable();
+        orderTable.userName = userName;
+        orderTable.phone = phone;
+        orderTable.date = date;
+        return orderTable;
+    }
+
+
 }

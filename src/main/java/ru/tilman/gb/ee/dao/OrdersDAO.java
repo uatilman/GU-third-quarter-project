@@ -8,7 +8,6 @@ import javax.interceptor.Interceptors;
 import java.util.List;
 
 @Stateless
-@Interceptors(ProjectLogger.class)
 public class OrdersDAO extends AbstractDAO {
 
     public List<OrderTable> getListOrders() {
