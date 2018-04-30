@@ -10,12 +10,11 @@ public class OrderHandler extends AbstractOrderHandler {
     public void handle(OrderTable orderTable) {
         if (isBusy()) {
             System.out.printf("Manager %s is busy\n", managerUser.getUserName());
+            super.handle(orderTable);
         } else {
             System.out.printf("Manager %s get order %s\n", managerUser.getUserName(), orderTable.getUserName());
             managerUser.getOrderTables().add(orderTable);
-            return;
         }
-        super.handle(orderTable);
     }
 
     private boolean isBusy() {
