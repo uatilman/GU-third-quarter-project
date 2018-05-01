@@ -1,21 +1,19 @@
 package ru.tilman.gb.ee.controllers.products;
 
 
-import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.ProductDAO;
 import ru.tilman.gb.ee.entity.AbstractEntity;
 import ru.tilman.gb.ee.entity.Product;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
-import javax.interceptor.Interceptors;
 
 @ViewScoped
 @ManagedBean
-@Interceptors(ProjectLogger.class)
 public class EditProductController extends AbstractController {
 
     private final String id = getParamString("id");
@@ -27,6 +25,7 @@ public class EditProductController extends AbstractController {
 
     @PostConstruct
     private void init() {
+        System.out.println("init. id: " + id);
         product = productDAO.getProductById(id);
     }
 

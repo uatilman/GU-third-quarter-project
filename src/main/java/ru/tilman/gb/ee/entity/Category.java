@@ -24,8 +24,8 @@ public class Category extends AbstractEntity {
      * Указание RESTRICT(или NO ACTION) аналогично исключению предложения ON DELETE или ON UPDATE.
      * Т.Е. мы неможем удалить категория пока есть продук, который на него ссылается
      */
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Product> products = new ArrayList<Product>();
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<Product> products = new ArrayList<Product>();
 
     public String getName() {
         return name;
@@ -42,14 +42,14 @@ public class Category extends AbstractEntity {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
+//
+//    public List<Product> getProducts() {
+//        return products;
+//    }
+//
+//    public void setProducts(List<Product> products) {
+//        this.products = products;
+//    }
 
     @Override
     public String toString() {

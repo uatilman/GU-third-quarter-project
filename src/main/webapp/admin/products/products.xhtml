@@ -12,7 +12,6 @@
 <custom:head title="Product table"/>
 
 <h:body>
-    ${productsController.printUserInfo()}
     <div class="container">
 
         <custom:header menuuri="products.xhtml"/>
@@ -22,6 +21,7 @@
                 <div class="product-table">
                     <h1><h:outputLabel value="Product table"/></h1>
                     <p:dataTable value="${productsController.products}" var="item" id="table" border="1">
+                        <p:column  styleClass="category-column" headerText="id">${item.id}</p:column>
                         <p:column styleClass="category-column" headerText="Category">${item.category}</p:column>
                         <p:column styleClass="name-column" headerText="Name">${item.name}</p:column>
                         <p:column styleClass="description-column"

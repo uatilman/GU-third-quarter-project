@@ -51,7 +51,6 @@ public class MenuController extends AbstractController {
                         itemUri.lastIndexOf("/") + 1,
                         itemUri.lastIndexOf(".xhtml") + 6);
 
-        System.out.println(tagItemName.equals(attributeURI) ? "active-link" : "");
         return tagItemName.equals(attributeURI) ? "active-link" : "";
     }
 

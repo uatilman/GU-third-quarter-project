@@ -29,8 +29,15 @@ public class ProductDAO extends AbstractDAO {
 
 
     public List<Product> getListProductByCategoryId(String categoryId) {
-        if (categoryId == null || categoryId.isEmpty()) return getListProduct();
+        if (categoryId == null || categoryId.isEmpty()) return null;
         return em.createQuery("SELECT e FROM Product e WHERE e.category.id = :categoryId", Product.class)
                 .setParameter("categoryId", categoryId).getResultList();
+    }
+
+    public List<Product> getProductsByName(String productName) {
+        System.out.println(productName);
+        if (productName == null || productName.isEmpty()) return null;
+        return  em.createQuery("SELECT e FROM Product e WHERE e.name = :productName", Product.class)
+                .setParameter("productName", productName).getResultList();
     }
 }

@@ -35,8 +35,8 @@ import java.util.List;
  * </managed-bean>
  */
 @ManagedBean
-@ApplicationScoped
-@Interceptors(ProjectLogger.class)
+@ViewScoped
+//@Interceptors(ProjectLogger.class)
 public class ProductsController extends AbstractController {
 
     @Inject
@@ -50,13 +50,13 @@ public class ProductsController extends AbstractController {
         return new ArrayList<>(productDAO.getListProduct());
     }
 
-    public void printUserInfo() throws IOException {
-        Enumeration enumeration = request.getHeaderNames();
-        while (enumeration.hasMoreElements()) {
-            String header = (String) enumeration.nextElement();
-            System.out.println(header + ": " + request.getHeader(header));
-        }
-    }
+//    public void printUserInfo() throws IOException {
+//        Enumeration enumeration = request.getHeaderNames();
+//        while (enumeration.hasMoreElements()) {
+//            String header = (String) enumeration.nextElement();
+//            System.out.println(header + ": " + request.getHeader(header));
+//        }
+//    }     <!--${productsController.printUserInfo()}-->
 
 }
 //standalone.bat.lnk -b 0.0.0.0

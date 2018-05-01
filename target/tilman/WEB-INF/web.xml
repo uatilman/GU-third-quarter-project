@@ -19,10 +19,15 @@
         <location>/error.jsp</location>
     </error-page>
 
-    <!--<error-page>-->
-        <!--<error-code>500</error-code>-->
-        <!--<location>/error.jsp</location>-->
-    <!--</error-page>-->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>200</error-code>
+        <location>/error.jsp</location>
+    </error-page>
 
     <servlet>
         <servlet-name>TestXHTML</servlet-name>

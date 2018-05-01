@@ -12,19 +12,13 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
 
-<!--    <navigation-rule>
-        <navigation-case>
-            <from-outcome>mega</from-outcome>
-            <to-view-id>/mega.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>test</from-outcome>
-            <to-view-id>/test.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>edit</from-outcome>
-            <to-view-id>/editproduct.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>-->
+    <!--<navigation-rule>-->
+
+        <!--&lt;!&ndash;<navigation-case>&ndash;&gt;-->
+            <!--&lt;!&ndash;<from-outcome>edit</from-outcome>&ndash;&gt;-->
+            <!--&lt;!&ndash;<to-view-id>/admin/products/editproduct.xhtml</to-view-id>&ndash;&gt;-->
+        <!--&lt;!&ndash;</navigation-case>&ndash;&gt;-->
+        <!---->
+    <!--</navigation-rule>-->
 
 </faces-config>

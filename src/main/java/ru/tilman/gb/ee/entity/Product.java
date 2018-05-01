@@ -18,8 +18,9 @@ public class Product extends AbstractEntity {
     @ManyToOne
     private Category category;
 
-
     private String imgUrl;
+
+
 
     public Category getCategory() {
         return category;
