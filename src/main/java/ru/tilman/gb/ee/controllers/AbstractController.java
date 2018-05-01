@@ -10,12 +10,10 @@ public abstract class AbstractController {
 
     public HttpServletRequest request = getHttpServletRequest();
 
-    @Interceptors(ProjectLogger.class)
     protected String getParamString(String paramName) {
         return getHttpServletRequest().getParameter(paramName);
     }
 
-    @Interceptors(ProjectLogger.class)
     public HttpServletRequest getHttpServletRequest() {
         final FacesContext context = FacesContext.getCurrentInstance();
         return (HttpServletRequest) context.getExternalContext().getRequest();

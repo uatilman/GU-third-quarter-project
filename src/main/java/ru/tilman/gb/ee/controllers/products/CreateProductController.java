@@ -17,9 +17,7 @@ import java.util.List;
 
 @ViewScoped
 @ManagedBean
-@Interceptors(ProjectLogger.class)
 public class CreateProductController extends AbstractController {
-
 
     @Inject
     private ProductDAO productDAO;

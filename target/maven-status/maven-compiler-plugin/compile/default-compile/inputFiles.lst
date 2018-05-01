@@ -23,11 +23,13 @@
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/patterns/ht3/users/AuthorizedUser.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/service/ProductService.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/servlet/CatalogServlet.java
+/home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/garbage/ProductToCDI.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/service/CategoryService.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/patterns/ht3/users/UsersType.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/target/generated-sources/wsimport/ru/tilman/gb/ee/service/mojo/package-info.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/target/generated-sources/wsimport/ru/tilman/gb/ee/service/mojo/GetListProductByCategoryId.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/patterns/ht3/users/ManagerUser.java
+/home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/garbage/ProductsViewToCDI.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/controllers/AbstractController.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/servlet/OrderServlet.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/dao/OrderProductDAO.java
@@ -69,6 +71,7 @@
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/dao/OrdersDAO.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/controllers/products/ProductsController.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/servlet/ContactsServlet.java
+/home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/garbage/CategoryConverter.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/servlet/MainServlet.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/src/main/java/ru/tilman/gb/ee/dao/ProductDAO.java
 /home/tilman/OneDrive/programming/programming/java/java7/GU-third-quarter-project/target/generated-sources/wsimport/ru/tilman/gb/ee/service/mojo/Category.java

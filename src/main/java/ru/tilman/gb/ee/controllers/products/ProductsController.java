@@ -36,7 +36,6 @@ import java.util.List;
  */
 @ManagedBean
 @ViewScoped
-//@Interceptors(ProjectLogger.class)
 public class ProductsController extends AbstractController {
 
     @Inject

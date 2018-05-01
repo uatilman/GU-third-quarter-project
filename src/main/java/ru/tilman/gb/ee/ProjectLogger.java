@@ -20,34 +20,33 @@ public class ProjectLogger {
     private static final Logger LOGGER = Logger.getLogger("ProjectLogger");
 
     static {
-//        initLogger();
+        initLogger();
     }
 
     @AroundInvoke
     public Object printLog(InvocationContext invocationContext) throws Exception {
-//        List<String> parameterList;
-//
-//        try {
-//            parameterList = Arrays
-//                    .stream(invocationContext.getParameters())
-//                    .map(o -> String.format("Class: %s, value: %s", o.getClass().getSimpleName(), o.toString())).collect(Collectors.toList());
-//        } catch (NullPointerException e) {
-//            parameterList = null;
-//        }
-//
-//        LOGGER.log(INFO, String.format(
-//                "Class: %s, Method: %s. Incoming Parameters %s ",
-//                invocationContext.getMethod().getDeclaringClass().getSimpleName(),
-//                invocationContext.getMethod().getName(), parameterList != null ? parameterList : "some parameters have null value"
-//        ));
-        return invocationContext.proceed();
+        List<String> parameterList;
 
-//        try {
-//            return invocationContext.proceed();
-//        } catch (Exception e) {
-//            LOGGER.log(WARNING, "Error calling invocationContext.proceed() in printLog()", e);
-//            return null;
-//        }
+        try {
+            parameterList = Arrays
+                    .stream(invocationContext.getParameters())
+                    .map(o -> String.format("Class: %s, value: %s", o.getClass().getSimpleName(), o.toString())).collect(Collectors.toList());
+        } catch (NullPointerException e) {
+            parameterList = null;
+        }
+
+        LOGGER.log(INFO, String.format(
+                "Class: %s, Method: %s. Incoming Parameters %s ",
+                invocationContext.getMethod().getDeclaringClass().getSimpleName(),
+                invocationContext.getMethod().getName(), parameterList != null ? parameterList : "some parameters have null value"
+        ));
+
+        try {
+            return invocationContext.proceed();
+        } catch (Exception e) {
+            LOGGER.log(WARNING, "Error calling invocationContext.proceed() in printLog()", e);
+            return null;
+        }
     }
 
     private static void initLogger() {

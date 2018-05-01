@@ -9,6 +9,7 @@ ru/tilman/gb/patterns/ht3/users/UserFactory.class
 ru/tilman/gb/ee/service/mojo/AddProductResponse.class
 ru/tilman/gb/ee/dao/CategoryDAO.class
 ru/tilman/gb/ee/controllers/products/CreateProductController.class
+ru/tilman/gb/ee/garbage/ProductToCDI.class
 ru/tilman/gb/patterns/ht5/responsibilitychain/Main.class
 ru/tilman/gb/ee/service/mojo/RemoveProductById.class
 ru/tilman/gb/ee/dao/MenuDao.class
@@ -39,7 +40,9 @@ ru/tilman/gb/patterns/ht3/users/UnAuthorizedUser.class
 ru/tilman/gb/ee/servlet/ProductServlet.class
 ru/tilman/gb/ee/entity/OrderProducts.class
 ru/tilman/gb/patterns/ht3/Cart.class
+ru/tilman/gb/ee/garbage/ProductsViewToCDI.class
 ru/tilman/gb/ee/controllers/products/EditProductController.class
+ru/tilman/gb/ee/garbage/CategoryConverter.class
 ru/tilman/gb/ee/service/mojo/package-info.class
 ru/tilman/gb/patterns/ht3/users/UsersType.class
 ru/tilman/gb/ee/MenuItems.class
