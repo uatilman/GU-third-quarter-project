@@ -24,6 +24,8 @@ public class ProductRecord {
 
     private String imgUrl;
 
+
+
     public ProductRecord() {
         id = "";
         name = "";

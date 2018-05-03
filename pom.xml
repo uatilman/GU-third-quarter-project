@@ -55,13 +55,13 @@
             <scope>compile</scope>
         </dependency>
 
-         <!--https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-rt-->
-        <dependency>
-            <groupId>com.sun.xml.ws</groupId>
-            <artifactId>jaxws-rt</artifactId>
-            <version>2.3.0</version>
-            <type>pom</type>
-        </dependency>
+         <!--&lt;!&ndash;https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-rt&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>com.sun.xml.ws</groupId>-->
+            <!--<artifactId>jaxws-rt</artifactId>-->
+            <!--<version>2.3.0</version>-->
+            <!--<type>pom</type>-->
+        <!--</dependency>-->
 
     </dependencies>
 
@@ -85,25 +85,25 @@
             </plugin>
 
             <!--https://www.mojohaus.org/jaxws-maven-plugin/usage.html-->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxws-maven-plugin</artifactId>
-                <version>2.5</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- The name of your generated source package -->
-                    <wsdlUrls>
-                        <wsdlUrl>http://localhost:8080/tilman/ProductService?wsdl</wsdlUrl>
-                    </wsdlUrls>
-                    <packageName>ru.tilman.gb.ee.service.mojo</packageName>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>jaxws-maven-plugin</artifactId>-->
+                <!--<version>2.5</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>wsimport</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+                <!--<configuration>-->
+                    <!--&lt;!&ndash; The name of your generated source package &ndash;&gt;-->
+                    <!--<wsdlUrls>-->
+                        <!--<wsdlUrl>http://localhost:8080/tilman/ProductService?wsdl</wsdlUrl>-->
+                    <!--</wsdlUrls>-->
+                    <!--<packageName>ru.tilman.gb.ee.service.mojo</packageName>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 
         </plugins>
     </build>

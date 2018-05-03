@@ -14,7 +14,6 @@ import java.util.List;
 
 @ManagedBean
 @ApplicationScoped
-@Interceptors(ProjectLogger.class)
 public class CategoryController implements Serializable {
 
     @Inject

@@ -17,19 +17,15 @@ import javax.ws.rs.core.MediaType;
 import javax.xml.ws.Endpoint;
 import java.util.List;
 
-
-/**
- * a. Добавлять товар в БД;+
- * b. Удалять товар из БД;+
- * c. Добавлять категорию товара;
- * d. Получить товар по Id;+
- * e. Получить товар по имени;+
- * f. Получить все товары;+
- * g. Получить товары по Id категории.+
- */
+// TODO: 02.05.18 заменить адреасацию сервисов на кемелкейс, можно продублировать наименование методов
+// TODO: 02.05.18 try catch in methods
+// TODO: 02.05.18  название переменных в константы
+// TODO: 02.05.18 попробовать пост запросы чтение по GET, изменение POST
+// TODO: 02.05.18 пример анотирования сервиса см 8 урок 49:45
+// TODO: 02.05.18 1:10 генерировать строку запроса
 
 //http://localhost:8080/tilman/ProductService?wsdl
-@Path("/productservice")
+@Path("/productService")
 @WebService
 public class ProductService {
 
@@ -42,10 +38,9 @@ public class ProductService {
     @Path("/products")
     @Produces({MediaType.APPLICATION_JSON})
     public List<ProductRecord> getListProductByCategoryId(
-            @QueryParam(value = "categoryid")
-            @WebParam(name = "categoryid", partName = "categoryid")
+            @QueryParam(value = "categoryId")
+            @WebParam(name = "categoryId", partName = "categoryId")
                     String id
-
     ) {
         return ProductRecord.toList(productDAO.getListProductByCategoryId(id));
     }
@@ -53,9 +48,10 @@ public class ProductService {
 
     //http://localhost:8080/tilman/api/productservice/allproducts
     @GET
-    @Path("/allproducts")
+    @Path("/allProducts")
     @Produces({MediaType.APPLICATION_JSON})
     @WebMethod
+    //unc
     public List<ProductRecord> getListProduct() {
         return ProductRecord.toList(productDAO.getListProduct());
     }
@@ -63,7 +59,7 @@ public class ProductService {
     // TODO: 30.04.18 конфлик имен при одинаковых выходных параметрах
     //http://localhost:8080/tilman/api/productservice/productsname?name=chair
     @GET
-    @Path("/productsname")
+    @Path("/productsName")
     @Produces({MediaType.APPLICATION_JSON})
     public List<ProductRecord> getProductByName(
             @QueryParam(value = "name") String productName
@@ -82,10 +78,10 @@ public class ProductService {
         return null;
     }
 
-    // TODO: 30.04.18 синхронизировать с отетами бд, если товар не найден
+    // TODO: 30.04.18 синхронизировать с ответами бд, если товар не найден - if - else заменить на try catch
     //http://localhost:8080/tilman/api/productservice/removeproduct?id=de284049-aaf7-4895-be32-6247806dd96d
     @GET
-    @Path("/removeproduct")
+    @Path("/removeProduct")
     @Produces({MediaType.APPLICATION_JSON})
     public ResultRecord removeProductById(
             @QueryParam(value = "id") String productId
@@ -104,7 +100,7 @@ public class ProductService {
 
     //http://localhost:8080/tilman/api/productservice/addproducts?name=chair&description=chairdescriotion&imgUrl=product10.jpg
     @GET
-    @Path("/addproducts")
+    @Path("/addProducts")
     @Produces({MediaType.APPLICATION_JSON})
     public ResultRecord addProduct(
             @QueryParam(value = "name") String name,

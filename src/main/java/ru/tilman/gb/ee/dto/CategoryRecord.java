@@ -17,6 +17,8 @@ public class CategoryRecord {
 
     private String description;
 
+    public CategoryRecord() {
+    }
 
     public CategoryRecord(Category category) {
         id = category.getId();

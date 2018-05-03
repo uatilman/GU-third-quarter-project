@@ -21,7 +21,7 @@
                 <div class="product-table">
                     <h1><h:outputLabel value="Category table"/></h1>
                     <p:dataTable value="${categoryController.categories}" var="item" id="table" border="1">
-                        <p:column styleClass="category-id" headerText="Name">${item.id}</p:column>
+                        <p:column styleClass="category-id" headerText="ID">${item.id}</p:column>
                         <p:column styleClass="category-name" headerText="Name">${item.name}</p:column>
                         <p:column styleClass="category-description"
                                   headerText="Description">${item.description}</p:column>

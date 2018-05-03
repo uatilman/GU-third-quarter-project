@@ -23,15 +23,17 @@
         <div class="product-table">
             <h1><h:outputLabel value="Order"/></h1>
             <p:dataTable value="#{orderProductController.orderProducts}" var="item" id="table" border="1">
-                <p:column headerText="ID">#{item.product.id}</p:column>
+                <p:column styleClass="category-id" headerText="ID">#{item.product.id}</p:column>
                 <p:column styleClass="name-column" headerText="Name">#{item.product.name}</p:column>
                 <p:column styleClass="image-column" headerText="Foto"><img src="#{item.product.imgUrl}"
                                                  alt="imag not found"/></p:column>
                 <p:column headerText="Count">
-                    <p:inputText value="#{item.count}"/>
+                    <p:inputText valueChangeListener="#{orderProductController.count}" value="#{item.count}"/>
                 </p:column>
 
-                <p:column headerText="Doing"><p:commandLink value="SAVE" action="#{orderProductController.save(item)}" update="table"/></p:column>
+                <p:column headerText="Doing">
+                    <p:commandLink value="SAVE" actionListener="#{orderProductController.save(item.product.id, item.count)}" update="table"/>
+                </p:column>
 
             </p:dataTable>
         </div>

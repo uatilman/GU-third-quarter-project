@@ -17,7 +17,6 @@ import javax.interceptor.Interceptors;
 
 @ViewScoped
 @ManagedBean
-@Interceptors(ProjectLogger.class)
 public class EditCategoryController extends AbstractController {
 
     private final String id = getParamString("id");

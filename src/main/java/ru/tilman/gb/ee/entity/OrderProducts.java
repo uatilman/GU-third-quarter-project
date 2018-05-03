@@ -25,7 +25,7 @@ public class OrderProducts extends AbstractEntity {
     private Product product;
 
     @Column
-    private Integer count;
+    private String count;
 
 
     public OrderProductsIds getOrderProductsIds() {
@@ -52,13 +52,11 @@ public class OrderProducts extends AbstractEntity {
         this.product = product;
     }
 
-    public Integer getCount() {
+    public String getCount() {
         return count;
     }
 
-    public void setCount(Integer count) {
+    public void setCount(String count) {
         this.count = count;
     }
-
-
 }

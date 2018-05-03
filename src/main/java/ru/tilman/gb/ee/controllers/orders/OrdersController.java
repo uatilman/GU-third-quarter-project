@@ -13,7 +13,6 @@ import java.util.List;
 
 @ManagedBean
 @ViewScoped
-@Interceptors(ProjectLogger.class)
 public class OrdersController extends AbstractController {
 
     @Inject

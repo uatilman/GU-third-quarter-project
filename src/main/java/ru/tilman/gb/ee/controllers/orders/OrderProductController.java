@@ -19,17 +19,18 @@ import java.util.List;
 
 @ManagedBean
 @ViewScoped
-@Interceptors(ProjectLogger.class)
 public class OrderProductController extends AbstractController {
 
     private final String id = getParamString("id");
 
-    private List<OrderProducts> orderProductsList;
 
     @Inject
     private OrderProductDAO orderProductDAO;
 
-//    private List<OrderProducts> orderProductsList;
+    private List<OrderProducts> orderProductsList;
+
+    private int count;
+
     @PostConstruct
     private void init() {
         System.out.println("init OrderProductController");
@@ -40,10 +41,45 @@ public class OrderProductController extends AbstractController {
          return new ArrayList<>(orderProductDAO.getOrderProductsListByOrderId(id));
 
     }
-
-    public void save(OrderProducts orderProduct) {
-        orderProductDAO.merge(orderProduct);
+    /**unchecked*/
+    public void save(String id, String count) {
+        System.out.println("count: " + count);
+        System.out.printf("Id: %s, count: %s count.\n", id, count);
+        String countParam = getParamString("count");
+        System.out.println(countParam);
+        for (OrderProducts op:orderProductsList) {
+            System.out.println(op.getCount());
+        }
+        System.out.println(orderProductsList);
+//        System.out.println(orderProduct.getCount());
+//        orderProductDAO.merge(orderProduct);
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public OrderProductDAO getOrderProductDAO() {
+        return orderProductDAO;
+    }
+
+    public void setOrderProductDAO(OrderProductDAO orderProductDAO) {
+        this.orderProductDAO = orderProductDAO;
+    }
+
+    public List<OrderProducts> getOrderProductsList() {
+        return orderProductsList;
+    }
+
+    public void setOrderProductsList(List<OrderProducts> orderProductsList) {
+        this.orderProductsList = orderProductsList;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 }

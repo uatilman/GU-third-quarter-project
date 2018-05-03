@@ -17,7 +17,6 @@ import java.util.List;
 
 @ViewScoped
 @ManagedBean
-@Interceptors(ProjectLogger.class)
 public class CreateCategoryController extends AbstractController {
 
     @Inject

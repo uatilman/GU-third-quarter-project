@@ -21,7 +21,7 @@ import java.util.List;
  * c. Добавлять категорию товара;+
  */
 
-@Path("/categoryservice")
+@Path("/categoryService")
 @WebService
 public class CategoryService {
 
@@ -30,7 +30,7 @@ public class CategoryService {
 
     //http://localhost:8080/tilman/api/categoryservice/allcategories
     @GET
-    @Path("/allcategories")
+    @Path("/allCategories")
     @Produces({MediaType.APPLICATION_JSON})
     @WebMethod
     public List<CategoryRecord> getListCategory() {
@@ -41,9 +41,9 @@ public class CategoryService {
 
     //http://localhost:8080/tilman/api/categoryservice/addcategory?name=cat5&description=cat5descriotion
     @GET
-    @Path("/addcategory")
+    @Path("/addCategory")
     @Produces({MediaType.APPLICATION_JSON})
-    public ResultRecord addProduct(
+    public ResultRecord addCategory(
             @QueryParam(value = "name") String name,
             @QueryParam(value = "description") String description
     ) {
