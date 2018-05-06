@@ -4,6 +4,7 @@ import ru.tilman.gb.ee.ProjectLogger;
 
 import javax.interceptor.Interceptors;
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Interceptors(ProjectLogger.class)
@@ -15,11 +16,13 @@ public class Product extends AbstractEntity {
     @Column(nullable = false, length = 4000)
     private String description;
 
+    @Column
+    private Double price;
+
     @ManyToOne
     private Category category;
 
     private String imgUrl;
-
 
 
     public Category getCategory() {
@@ -54,13 +57,29 @@ public class Product extends AbstractEntity {
         this.imgUrl = imgUrl;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", imgUrl='" + imgUrl + '\'' +
-                '}' + "\n";
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(name, product.name) &&
+                Objects.equals(description, product.description) &&
+                Objects.equals(price, product.price) &&
+                Objects.equals(category, product.category) &&
+                Objects.equals(imgUrl, product.imgUrl);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name, description, price, category, imgUrl);
     }
 }

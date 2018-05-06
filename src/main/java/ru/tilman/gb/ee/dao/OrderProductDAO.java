@@ -10,6 +10,11 @@ import java.util.List;
 @Interceptors(ProjectLogger.class)
 public class OrderProductDAO extends AbstractDAO {
 
+    public void merge(OrderProducts entity) {
+        if (entity == null) return;
+        em.merge(entity);
+    }
+
     public List<OrderProducts> getOrderProductsListByOrderId(String id) {
         List<OrderProducts> list = em.createQuery(
                 "SELECT orderproducts " +

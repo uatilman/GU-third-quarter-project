@@ -45,6 +45,7 @@ ru/tilman/gb/patterns/ht3/users/CustomerUser.class
 ru/tilman/gb/ee/servlet/OrderServlet.class
 ru/tilman/gb/ee/entity/Product.class
 ru/tilman/gb/ee/servlet/MainServlet.class
+ru/tilman/gb/ee/SecuredServlet.class
 ru/tilman/gb/ee/dao/OrdersDAO.class
 ru/tilman/gb/patterns/ht5/responsibilitychain/AbstractOrderHandler.class
 ru/tilman/gb/ee/service/ProductService.class

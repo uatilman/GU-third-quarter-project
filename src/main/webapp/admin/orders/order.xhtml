@@ -16,31 +16,38 @@
 
 <div class="container">
 
-<custom:header menuuri="order.xhtml"/>
+    <custom:header menuuri="order.xhtml"/>
 
-<h:form>
-    <div class="padding-site">
-        <div class="product-table">
-            <h1><h:outputLabel value="Order"/></h1>
-            <p:dataTable value="#{orderProductController.orderProducts}" var="item" id="table" border="1">
-                <p:column styleClass="category-id" headerText="ID">#{item.product.id}</p:column>
-                <p:column styleClass="name-column" headerText="Name">#{item.product.name}</p:column>
-                <p:column styleClass="image-column" headerText="Foto"><img src="#{item.product.imgUrl}"
-                                                 alt="imag not found"/></p:column>
-                <p:column headerText="Count">
-                    <p:inputText valueChangeListener="#{orderProductController.count}" value="#{item.count}"/>
-                </p:column>
+    <h:form>
+        <div class="padding-site">
+            <div class="order-product-table product-table">
+                <h1><h:outputLabel value="Order"/></h1>
+                <p:dataTable value="#{orderProductController.orderProductsList}" var="item"
+                             rowIndexVar="rowIndex" border="1" id="table">
+                    <p:column styleClass="order-product-number" headerText="№">#{rowIndex+1}</p:column>
+                    <p:column styleClass="order-product-id" headerText="ID">#{item.product.id}</p:column>
+                    <p:column styleClass="name-column" headerText="Name">#{item.product.name}</p:column>
+                    <p:column styleClass="image-column" headerText="Foto"><img src="#{item.product.imgUrl}"
+                                                                               alt="image not found"/></p:column>
+                    <p:column styleClass="count-column" headerText="Count">
+                        <p:inputText value="#{item.count}">
+                            <p:ajax listener="#{orderProductController.save(item)}" update="table"/>
+                        </p:inputText>
+                    </p:column>
 
-                <p:column headerText="Doing">
-                    <p:commandLink value="SAVE" actionListener="#{orderProductController.save(item.product.id, item.count)}" update="table"/>
-                </p:column>
+                    <p:column styleClass="total-column"
+                              headerText="Total">#{orderProductController.getProductTotal(rowIndex)}</p:column>
 
-            </p:dataTable>
+                    <!--<p:column headerText="Doing">-->
+                    <!--<p:commandLink value="SAVE" actionListener="#{orderProductController.save(item)}"-->
+                    <!--update="table"/>-->
+                    <!--</p:column>-->
+                    <f:facet name="footer">Total price ${orderProductController.total}</f:facet>
+                </p:dataTable>
+            </div>
         </div>
 
-    </div>
-
-</h:form>
+    </h:form>
 </div>
 </body>
 </html>

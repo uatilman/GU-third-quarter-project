@@ -37,22 +37,36 @@ public class OrderProductController extends AbstractController {
         orderProductsList = orderProductDAO.getOrderProductsListByOrderId(id);
     }
 
-    public List<OrderProducts> getOrderProducts() {
-         return new ArrayList<>(orderProductDAO.getOrderProductsListByOrderId(id));
+    public String getProductTotal(int rowIndex) {
+        Double total = orderProductsList.get(rowIndex).getCount() *
+                orderProductsList.get(rowIndex).getProduct().getPrice();
 
+        return String.format("%.2f", total);
     }
-    /**unchecked*/
-    public void save(String id, String count) {
-        System.out.println("count: " + count);
-        System.out.printf("Id: %s, count: %s count.\n", id, count);
-        String countParam = getParamString("count");
-        System.out.println(countParam);
-        for (OrderProducts op:orderProductsList) {
-            System.out.println(op.getCount());
+
+    public String getTotal() {
+        Double total = 0.0;
+        for (OrderProducts op : orderProductsList) {
+            total += op.getCount() * op.getProduct().getPrice();
         }
-        System.out.println(orderProductsList);
-//        System.out.println(orderProduct.getCount());
-//        orderProductDAO.merge(orderProduct);
+
+        return String.format("%.2f", total);
+    }
+
+
+    public List<OrderProducts> getOrderProductsList() {
+        return orderProductsList;
+    }
+
+    public void setOrderProductsList(List<OrderProducts> orderProductsList) {
+        this.orderProductsList = orderProductsList;
+    }
+
+    /**
+     * unchecked
+     */
+    public void save(OrderProducts orderProduct) {
+        orderProductDAO.merge(orderProduct);
     }
 
     public String getId() {
@@ -67,13 +81,6 @@ public class OrderProductController extends AbstractController {
         this.orderProductDAO = orderProductDAO;
     }
 
-    public List<OrderProducts> getOrderProductsList() {
-        return orderProductsList;
-    }
-
-    public void setOrderProductsList(List<OrderProducts> orderProductsList) {
-        this.orderProductsList = orderProductsList;
-    }
 
     public int getCount() {
         return count;

@@ -994,7 +994,6 @@ button .svg-inline--fa.fa-w-14:hover {
     margin-right: auto;
 }
 
-
 .product-table .category-column {
     width: 70px;
 }
@@ -1015,7 +1014,23 @@ button .svg-inline--fa.fa-w-14:hover {
     width: 98px;
 }
 
-.product-table .remove-column {
+.remove-column {
     width: 100px;
+}
+
+
+.count-column input {
+    width: 50px;
+}
+
+.order-product-number, .order-product-id, .count-column  {
+    width: 60px;
+}
+
+.order-product-number, .order-product-id, .count-column, .count-column input, .total-column, remove-column  {
     text-align: center;
+}
+
+.total-column {
+    width: 100px;
 }

@@ -11,7 +11,7 @@ import java.io.Serializable;
 @SessionScoped
 @Entity
 @Interceptors(ProjectLogger.class)
-public class OrderProducts extends AbstractEntity {
+public class OrderProducts {
 
     @EmbeddedId
     private OrderProductsIds orderProductsIds;
@@ -25,7 +25,7 @@ public class OrderProducts extends AbstractEntity {
     private Product product;
 
     @Column
-    private String count;
+    private Integer count;
 
 
     public OrderProductsIds getOrderProductsIds() {
@@ -52,11 +52,11 @@ public class OrderProducts extends AbstractEntity {
         this.product = product;
     }
 
-    public String getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(String count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 }
