@@ -33,6 +33,7 @@
         <auth-method>BASIC</auth-method>
         <realm-name>RealmUsersRoles</realm-name>
     </login-config>
+
     <!--<login-config>-->
         <!--<auth-method>FORM</auth-method>-->
         <!--<realm-name>file</realm-name>-->

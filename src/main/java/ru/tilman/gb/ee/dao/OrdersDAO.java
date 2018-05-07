@@ -7,7 +7,7 @@ import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
 import java.util.List;
 
-@Stateless
+//@Stateless
 @Interceptors(ProjectLogger.class)
 public class OrdersDAO extends AbstractDAO {
 

@@ -22,7 +22,7 @@ import java.util.List;
  */
 
 @Path("/categoryService")
-@WebService
+//@WebService
 public class CategoryService {
 
     @Inject

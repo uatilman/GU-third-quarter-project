@@ -26,7 +26,7 @@ import java.util.List;
 
 //http://localhost:8080/tilman/ProductService?wsdl
 @Path("/productService")
-@WebService
+//@WebService
 public class ProductService {
 
     @Inject
