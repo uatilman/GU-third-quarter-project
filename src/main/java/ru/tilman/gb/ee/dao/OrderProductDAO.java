@@ -52,7 +52,12 @@ public class OrderProductDAO extends AbstractDAO {
         return em.find(OrderProducts.class, id);
     }
 
-//    @Interceptors(ProjectLogger.class)
+    public void persist(OrderProducts entity) {
+        if (entity == null) return;
+        em.persist(entity);
+    }
+
+    //    @Interceptors(ProjectLogger.class)
 //    public void merge(List<OrderProducts> orderProducts) {
 //        if (orderProducts == null) {
 //            System.out.println("merge is null");
