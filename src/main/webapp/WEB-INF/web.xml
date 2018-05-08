@@ -11,60 +11,64 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/error.jsp</location>
+        <location>/WEB-INF/error.jsp</location>
     </error-page>
 
     <error-page>
         <error-code>403</error-code>
-        <location>/error.jsp</location>
+        <location>/WEB-INF/error.jsp</location>
     </error-page>
 
     <error-page>
         <error-code>500</error-code>
-        <location>/error.jsp</location>
+        <location>/WEB-INF/error.jsp</location>
     </error-page>
 
     <error-page>
         <error-code>200</error-code>
-        <location>/error.jsp</location>
+        <location>/WEB-INF/error.jsp</location>
     </error-page>
 
     <login-config>
-        <auth-method>BASIC</auth-method>
-        <realm-name>RealmUsersRoles</realm-name>
+        <!--<auth-method>BASIC</auth-method>-->
+        <!--<realm-name>RealmUsersRoles</realm-name>        -->
+        <auth-method>FORM</auth-method>
+        <realm-name>file</realm-name>
+        <form-login-config>
+            <form-login-page>/WEB-INF/login.jsp</form-login-page>
+            <form-error-page>/WEB-INF/error.jsp</form-error-page>
+        </form-login-config>
     </login-config>
 
     <!--<login-config>-->
-        <!--<auth-method>FORM</auth-method>-->
-        <!--<realm-name>file</realm-name>-->
-        <!--<form-login-config>-->
-            <!--<form-login-page>/login.jsp​</form-login-page>-->
-            <!--<form-error-page>/error.jsp</form-error-page>-->
-        <!--</form-login-config>-->
+    <!--<auth-method>FORM</auth-method>-->
+    <!--<realm-name>file</realm-name>-->
+    <!--<form-login-config>-->
+    <!--<form-login-page>/login.jsp​</form-login-page>-->
+    <!--<form-error-page>/error.jsp</form-error-page>-->
+    <!--</form-login-config>-->
     <!--</login-config>-->
 
-    <!--<servlet>-->
-        <!--<servlet-name>TestXHTML</servlet-name>-->
-        <!--<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>-->
-        <!--<load-on-startup>1</load-on-startup>-->
-    <!--</servlet>-->
+    <servlet>
+        <servlet-name>TestXHTML</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestXHTML</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
 
     <!--<servlet-mapping>-->
-        <!--<servlet-name>TestXHTML</servlet-name>-->
-        <!--<url-pattern>/faces/*</url-pattern>-->
-    <!--</servlet-mapping>-->
-
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>TestXHTML</servlet-name>-->
-        <!--<url-pattern>*.xhtml</url-pattern>-->
+    <!--<servlet-name>TestXHTML</servlet-name>-->
+    <!--<url-pattern>*.xhtml</url-pattern>-->
     <!--</servlet-mapping>-->
 
     <!--<context-param>-->
-        <!--<param-name>javax.faces.FACELETS_VIEW_MAPPINGS</param-name>-->
-        <!--<param-value>*.xhtml</param-value>-->
+    <!--<param-name>javax.faces.FACELETS_VIEW_MAPPINGS</param-name>-->
+    <!--<param-value>*.xhtml</param-value>-->
     <!--</context-param>-->
-
-
 
 
 </web-app>

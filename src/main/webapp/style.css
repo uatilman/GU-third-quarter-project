@@ -988,6 +988,54 @@ button .svg-inline--fa.fa-w-14:hover {
     margin-bottom: 100px;
 }
 
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.login input {
+    margin-bottom: 30px;
+    width: 200px;
+    border-radius: 22.5px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 4.85px 0.15px rgba(33, 33, 33, 0.35);
+    padding: 10px 31px;
+    color: #212121;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3.6px;
+}
+
+.login-button {
+    width: 100px;
+    background-color: #f7f7f7;
+
+}
+
+.login-button:hover {
+    background-color: #fff;
+}
+
+.login-button:active {
+    position: relative;
+    top: 2px;
+}
+
+.login input:active, .login input:focus {
+    outline: none;
+}
+
+.login input:focus {
+    background-color: antiquewhite;
+}
+
 .product-table {
     width: 800px;
     margin-left: auto;
@@ -1018,16 +1066,15 @@ button .svg-inline--fa.fa-w-14:hover {
     width: 100px;
 }
 
-
 .count-column input {
     width: 50px;
 }
 
-.order-product-number, .order-product-id, .count-column  {
+.order-product-number, .order-product-id, .count-column {
     width: 60px;
 }
 
-.order-product-number, .order-product-id, .count-column, .count-column input, .total-column, remove-column  {
+.order-product-number, .order-product-id, .count-column, .count-column input, .total-column, remove-column {
     text-align: center;
 }
 
