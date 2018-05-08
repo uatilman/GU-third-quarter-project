@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
-<jsp:include page="${pageContext.request.contextPath}/fragments/head.jsp">
+<jsp:include page="../fragments/head.jsp">
     <jsp:param name="title" value="Login"/>
 </jsp:include>
-<body>
+<body class="login-body">
 
     <div class="login">
         <form method="post" action="j_security_check">
@@ -15,7 +15,6 @@
             <input class="login-button" type="submit" value="login">
         </form>
     </div>
-    <jsp:include page="${pageContext.request.contextPath}/fragments/footer.jsp"/>
 
 </body>
 </html>

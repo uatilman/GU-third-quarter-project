@@ -30,10 +30,9 @@
     </error-page>
 
     <login-config>
-        <!--<auth-method>BASIC</auth-method>-->
-        <!--<realm-name>RealmUsersRoles</realm-name>        -->
         <auth-method>FORM</auth-method>
         <realm-name>file</realm-name>
+
         <form-login-config>
             <form-login-page>/WEB-INF/login.jsp</form-login-page>
             <form-error-page>/WEB-INF/error.jsp</form-error-page>
@@ -44,19 +43,28 @@
         <web-resource-collection>
             <web-resource-name>adminName</web-resource-name>
             <url-pattern>/admin/*</url-pattern>
-
         </web-resource-collection>
+
         <auth-constraint>
             <description/>
             <role-name>quickstarts</role-name>
         </auth-constraint>
 
-
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
     </security-constraint>
+
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+
     <servlet>
+
         <servlet-name>FacesServlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
+
     </servlet>
 
     <servlet-mapping>
@@ -73,24 +81,5 @@
         <param-name>org.omnifaces.FACES_VIEWS_SCAN_PATHS</param-name>
         <param-value>/*.xhtml</param-value>
     </context-param>
-
-    <!--<context-param>-->
-    <!--<param-name>javax.faces.FACELETS_VIEW_MAPPINGS</param-name>-->
-    <!--<param-value>*.xhtml</param-value>-->
-    <!--</context-param>-->
-
-    <!--<context-param>-->
-    <!--<param-name>javax.faces.DEFAULT_SUFFIX</param-name>-->
-    <!--<param-value>*.xhtml</param-value>-->
-    <!--</context-param>-->
-
-    <listener>
-        <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
-    </listener>
-
-    <!--<welcome-file-list>-->
-    <!--<welcome-file>faces/admin/products/products.xhtml</welcome-file>-->
-    <!--</welcome-file-list>-->
-
 
 </web-app>
