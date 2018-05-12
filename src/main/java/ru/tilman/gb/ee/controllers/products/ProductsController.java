@@ -1,6 +1,7 @@
 package ru.tilman.gb.ee.controllers.products;
 
 //import org.primefaces.PrimeFaces;
+import org.primefaces.PrimeFaces;
 import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.ProductDAO;
@@ -53,11 +54,9 @@ public class ProductsController extends AbstractController {
     }
 
 
-/*
     public void selectProductFromDialog(Product product) {
         PrimeFaces.current().dialog().closeDynamic(product);
     }
-*/
 
 
 //    public void printUserInfo() throws IOException {

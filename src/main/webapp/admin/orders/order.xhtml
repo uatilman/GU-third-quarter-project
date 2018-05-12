@@ -65,16 +65,13 @@
                 <br/>
                 <br/>
 
-                <p:growl id="growl" showDetail="true" />
-                <p:commandButton value="Show"  icon="ui-icon-script" actionListener="#{viewProducts.chooseProduct}">
-                    <p:ajax event="dialogReturn" listener="#{viewProducts.onProductChosen}" update="growl" />
+                <p:growl id="growl" showDetail="true"/>
+                <p:commandButton value="Show" icon="ui-icon-extlink" actionListener="#{viewProducts.chooseProduct}">
+                    <p:ajax event="dialogReturn" listener="#{viewProducts.onProductChosen}" update="growl"/>
                 </p:commandButton>
-                <br/>
-                <p:commandButton value="Show" icon="ui-icon-script" actionListener="#{viewProducts.showMessage}" />
 
             </div>
         </div>
-
 
 
     </h:form>

@@ -20,6 +20,13 @@
             <p:ajax event="dialogReturn" listener="#{viewProducts.onProductChosen}" update="growl" />
         </p:commandButton>
         <br/>
+
+        <p:commandButton value="Show"  icon="ui-icon-extlink" actionListener="#{viewProducts.chooseProduct1}">
+            <p:ajax event="dialogReturn" listener="#{viewProducts.onProductChosen}" update="growl" />
+        </p:commandButton>
+
+        <br/>
+
         <p:commandButton value="Show" icon="ui-icon-script" actionListener="#{viewProducts.showMessage}" />
 
     </h:form>
