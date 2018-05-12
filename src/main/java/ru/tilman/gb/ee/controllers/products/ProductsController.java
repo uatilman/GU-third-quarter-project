@@ -1,5 +1,6 @@
 package ru.tilman.gb.ee.controllers.products;
 
+//import org.primefaces.PrimeFaces;
 import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.ProductDAO;
@@ -43,12 +44,21 @@ public class ProductsController extends AbstractController {
     private ProductDAO productDAO;
 
     public void removeProduct(Product product) {
-        productDAO.removeById(product.getId(), product.getClass());
+        System.out.println("remove product id" + product.getId());
+        productDAO.removeById(product.getId(), Product.class);
     }
 
     public List<Product> getProducts() {
         return new ArrayList<>(productDAO.getListProduct());
     }
+
+
+/*
+    public void selectProductFromDialog(Product product) {
+        PrimeFaces.current().dialog().closeDynamic(product);
+    }
+*/
+
 
 //    public void printUserInfo() throws IOException {
 //        Enumeration enumeration = request.getHeaderNames();

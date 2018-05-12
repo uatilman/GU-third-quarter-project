@@ -12,7 +12,7 @@ import java.util.List;
  * будет являться чатью фреймворка EJB
  * не хранит в себе состояний, для созданных полей не гарантированно сохранение состояний
  */
-//@Stateless
+@Stateless
 @Interceptors(ProjectLogger.class)
 public class CategoryDAO extends AbstractDAO {
 

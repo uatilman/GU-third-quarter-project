@@ -21,7 +21,25 @@
     <h:form>
         <div class="padding-site">
             <div class="order-product-table product-table">
-                <h1><h:outputLabel value="Order"/></h1>
+                <h1>
+                    <h:outputLabel value="Order #{orderProductController.orderTable.id}"/>
+                </h1>
+
+                <p:outputPanel>
+                    <p:outputLabel value="User name"/>
+                </p:outputPanel>
+                <p:outputPanel>
+                    <p:inputText value="#{orderProductController.orderTable.userName}"/>
+                </p:outputPanel>
+
+                <p:outputPanel>
+                    <p:outputLabel value="Phone"/>
+                </p:outputPanel>
+                <p:outputPanel>
+                    <p:inputText value="#{orderProductController.orderTable.phone}"/>
+                </p:outputPanel>
+
+                <br/>
                 <p:dataTable value="#{orderProductController.orderProductsList}" var="item"
                              rowIndexVar="rowIndex" border="1" id="table">
                     <p:column styleClass="order-product-number" headerText="№">#{rowIndex+1}</p:column>
@@ -44,8 +62,20 @@
                     <!--</p:column>-->
                     <f:facet name="footer">Total price ${orderProductController.total}</f:facet>
                 </p:dataTable>
+                <br/>
+                <br/>
+
+                <p:growl id="growl" showDetail="true" />
+                <p:commandButton value="Show"  icon="ui-icon-script" actionListener="#{viewProducts.chooseProduct}">
+                    <p:ajax event="dialogReturn" listener="#{viewProducts.onProductChosen}" update="growl" />
+                </p:commandButton>
+                <br/>
+                <p:commandButton value="Show" icon="ui-icon-script" actionListener="#{viewProducts.showMessage}" />
+
             </div>
         </div>
+
+
 
     </h:form>
 </div>

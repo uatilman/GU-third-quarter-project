@@ -1,19 +1,28 @@
 package ru.tilman.gb.ee.dao;
 
 import ru.tilman.gb.ee.ProjectLogger;
-import ru.tilman.gb.ee.entity.AbstractEntity;
 import ru.tilman.gb.ee.entity.Product;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
 import java.util.List;
+
+
 
 /**
  * @Stateless говорит о том, что это класс доступа к данным,
  * будет являться чатью фреймворка EJB
  * не хранит в себе состояний, для созданных полей не гарантированно сохранение состояний
  */
-//@Stateless
+@Stateless
+//@PermitAll
+//@ServletSecurity(@HttpConstraint(rolesAllowed = { "quickstarts" }))
+//@RolesAllowed("{quickstarts}")
+//@SecurityDomain("servlet-security-quickstart")
 @Interceptors(ProjectLogger.class)
 public class ProductDAO extends AbstractDAO {
 

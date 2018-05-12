@@ -987,10 +987,12 @@ button .svg-inline--fa.fa-w-14:hover {
     margin-top: 100px;
     margin-bottom: 100px;
 }
-.login-body {
-    background-image: url('img/slider-img.jpg');
 
+.login-body {
+    background: url('img/slider-img.jpg') no-repeat;
+    background-size: 100%
 }
+
 .login {
     position: absolute;
     top: 50%;

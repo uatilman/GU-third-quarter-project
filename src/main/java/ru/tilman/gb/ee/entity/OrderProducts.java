@@ -18,7 +18,16 @@ public class OrderProducts {
 
     @MapsId("orderId")
     @ManyToOne
-    private OrderTable orderTable;
+    private OrderTable orderTable; //add mysql manual CASCADE:
+
+/*    ALTER TABLE `interior`.`orderproducts`
+    DROP FOREIGN KEY `FKbnir9uolyq1xe19j8krsya6ft`;
+    ALTER TABLE `interior`.`orderproducts`
+    ADD CONSTRAINT `FKbnir9uolyq1xe19j8krsya6ft`
+    FOREIGN KEY (`orderTable_id`)
+    REFERENCES `interior`.`ordertable` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE RESTRICT;*/
 
     @MapsId("productId")
     @ManyToOne

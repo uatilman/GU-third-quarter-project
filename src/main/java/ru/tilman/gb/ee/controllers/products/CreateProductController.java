@@ -27,7 +27,7 @@ public class CreateProductController extends AbstractController {
 
     private List<Category> categories;
     private String categoryId;
-    private Product product = new Product();
+    private Product product = new Product(); // TODO: 11.05.18 to init
 
     @PostConstruct
     private void init() {

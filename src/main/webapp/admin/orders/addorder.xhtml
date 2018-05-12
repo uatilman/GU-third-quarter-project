@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:custom="http://java.sun.com/jsf/composite/fragments"
+>
+
+<custom:head title="Add order"/>
+
+<h:body>
+
+    <div class="container">
+        <custom:header menuuri="addorder.xhtml"/>
+
+        <h:form>
+            <h1>Add Product</h1>
+
+            <p:outputPanel>
+                <p:outputLabel value="id"/>
+            </p:outputPanel>
+            <p:outputPanel>
+                <p:inputText value="#{ordersController.orderTable.id}"/>
+            </p:outputPanel>
+
+            <p:outputPanel>
+                <p:outputLabel value="User name"/>
+            </p:outputPanel>
+            <p:outputPanel>
+                <p:inputText value="#{ordersController.orderTable.userName}"/>
+            </p:outputPanel>
+
+            <p:outputPanel>
+                <p:outputLabel value="Phone"/>
+            </p:outputPanel>
+            <p:outputPanel>
+                <p:inputText value="#{ordersController.orderTable.phone}"/>
+            </p:outputPanel>
+
+
+
+            <br/>
+            <br/>
+
+            <p:outputPanel>
+                <p:commandButton value="save" action="#{ordersController.save}"/>
+            </p:outputPanel>
+
+
+        </h:form>
+    </div>
+
+</h:body>
+</html>

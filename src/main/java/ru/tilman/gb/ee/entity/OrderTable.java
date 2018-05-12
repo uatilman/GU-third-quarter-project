@@ -22,7 +22,7 @@ public class OrderTable extends AbstractEntity {
     @Column
     private Date date;
 
-//    @ManyToOne
+//    @ManyToOne (cascade = CascadeType.ALL)
 //    private OrderProducts orderProducts;
 
     public Date getDate() {
