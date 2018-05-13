@@ -22,6 +22,7 @@ public class Product extends AbstractEntity {
     @ManyToOne
     private Category category;
 
+    @Column (name = "img_url")
     private String imgUrl;
 
 
