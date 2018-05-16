@@ -36,7 +36,7 @@
         </form-login-config>
     </login-config>
 
-    <security-constraint>
+<!--    <security-constraint>
         <web-resource-collection>
             <web-resource-name>adminName</web-resource-name>
             <url-pattern>/admin/*</url-pattern>
@@ -50,7 +50,7 @@
         <user-data-constraint>
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>
-    </security-constraint>
+    </security-constraint>-->
 
     <session-config>
         <session-timeout>10</session-timeout>

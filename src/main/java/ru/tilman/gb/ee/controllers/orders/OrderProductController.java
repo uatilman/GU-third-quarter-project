@@ -18,12 +18,14 @@ import ru.tilman.gb.ee.logger.Loggable;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.inject.Named;
+import javax.transaction.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@ManagedBean
+@Named(value = "orderProductController")
 @ViewScoped
 @Loggable
 public class OrderProductController extends AbstractController {

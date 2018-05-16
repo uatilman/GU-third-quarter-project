@@ -17,7 +17,7 @@ public class OrderProductDAO extends AbstractDAO {
         em.merge(entity);
     }
 
-    @Loggable
+//    @Loggable
     public List<OrderProducts> getOrderProductsListByOrderId(String id) {
        return em.createQuery(
                "SELECT orderproducts " +
