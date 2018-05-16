@@ -1,16 +1,16 @@
 package ru.tilman.gb.ee.entity;
 
-import ru.tilman.gb.ee.ProjectLogger;
+import ru.tilman.gb.ee.logger.Loggable;
+import ru.tilman.gb.ee.logger.ProjectLogger;
 
 import javax.interceptor.Interceptors;
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 
 @Entity (name = "ordertable")
 @Interceptors(ProjectLogger.class)
+@Loggable
 public class OrderTable extends AbstractEntity {
 
     @Column

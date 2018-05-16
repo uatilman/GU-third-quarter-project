@@ -1,6 +1,7 @@
 package ru.tilman.gb.ee.entity;
 
-import ru.tilman.gb.ee.ProjectLogger;
+import ru.tilman.gb.ee.logger.Loggable;
+import ru.tilman.gb.ee.logger.ProjectLogger;
 
 import javax.interceptor.Interceptors;
 import javax.persistence.Embeddable;
@@ -11,6 +12,7 @@ import java.util.Objects;
 
 @Embeddable
 @Interceptors(ProjectLogger.class)
+@Loggable
 public class OrderProductsIds implements Serializable {
     private String orderId;
     private String productId;

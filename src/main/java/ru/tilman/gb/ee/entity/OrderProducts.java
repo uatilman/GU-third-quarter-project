@@ -1,16 +1,17 @@
 package ru.tilman.gb.ee.entity;
 
-import ru.tilman.gb.ee.ProjectLogger;
+import ru.tilman.gb.ee.logger.Loggable;
+import ru.tilman.gb.ee.logger.ProjectLogger;
 
 import javax.faces.bean.SessionScoped;
 import javax.interceptor.Interceptors;
 import javax.persistence.*;
-import java.io.Serializable;
 /*https://docs.oracle.com/javaee/7/api/javax/persistence/MapsId.html*/
 
 @SessionScoped
 @Entity (name = "orderproducts")
 @Interceptors(ProjectLogger.class)
+@Loggable
 public class OrderProducts {
 
     @EmbeddedId

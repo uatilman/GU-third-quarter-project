@@ -14,6 +14,7 @@ import ru.tilman.gb.ee.dao.OrdersDAO;
 import ru.tilman.gb.ee.entity.OrderProducts;
 import ru.tilman.gb.ee.entity.OrderTable;
 import ru.tilman.gb.ee.entity.Product;
+import ru.tilman.gb.ee.logger.Loggable;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -24,6 +25,7 @@ import java.util.Map;
 
 @ManagedBean
 @ViewScoped
+@Loggable
 public class OrderProductController extends AbstractController {
 
     private final String id = getParamString("id");
@@ -42,16 +44,11 @@ public class OrderProductController extends AbstractController {
 
     @PostConstruct
     private void init() {
-        System.out.println("init OrderProductController, id: " + id);
         orderProductsList = orderProductDAO.getOrderProductsListByOrderId(id);
         orderTable = ordersDAO.getOrderById(id);
-        System.out.println("size: " + orderProductsList.size());
-        //        System.out.println(orderProductsList.get(0).getProduct().getName());
-
     }
 
     public void chooseProduct() {
-        System.out.println("chooseProduct");
         Map<String,Object> options = new HashMap<>();
         options.put("resizable", false);
         options.put("draggable", false);

@@ -1,9 +1,6 @@
 package ru.tilman.gb.ee.controllers;
 
-import ru.tilman.gb.ee.ProjectLogger;
-
 import javax.faces.context.FacesContext;
-import javax.interceptor.Interceptors;
 import javax.servlet.http.HttpServletRequest;
 
 public abstract class AbstractController {

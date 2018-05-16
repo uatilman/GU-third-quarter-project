@@ -1,14 +1,10 @@
 package ru.tilman.gb.ee.dao;
 
-import ru.tilman.gb.ee.ProjectLogger;
+import ru.tilman.gb.ee.logger.ProjectLogger;
 import ru.tilman.gb.ee.entity.Product;
 
-import javax.annotation.security.PermitAll;
-import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
-import javax.servlet.annotation.HttpConstraint;
-import javax.servlet.annotation.ServletSecurity;
 import java.util.List;
 
 

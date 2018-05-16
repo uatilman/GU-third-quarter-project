@@ -1,13 +1,11 @@
 package ru.tilman.gb.ee.controllers.categories;
 
-import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.dao.CategoryDAO;
 import ru.tilman.gb.ee.entity.Category;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
-import javax.interceptor.Interceptors;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

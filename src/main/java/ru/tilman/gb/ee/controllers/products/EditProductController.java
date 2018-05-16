@@ -1,18 +1,15 @@
 package ru.tilman.gb.ee.controllers.products;
 
 
-import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.ProductDAO;
 import ru.tilman.gb.ee.entity.AbstractEntity;
 import ru.tilman.gb.ee.entity.Product;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
-import javax.interceptor.Interceptors;
 
 @ViewScoped
 @ManagedBean

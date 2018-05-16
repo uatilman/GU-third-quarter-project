@@ -1,6 +1,7 @@
 package ru.tilman.gb.ee.dao;
 
-import ru.tilman.gb.ee.ProjectLogger;
+import ru.tilman.gb.ee.logger.Loggable;
+import ru.tilman.gb.ee.logger.ProjectLogger;
 import ru.tilman.gb.ee.entity.OrderTable;
 
 import javax.ejb.Stateless;
@@ -9,8 +10,10 @@ import java.util.List;
 
 @Stateless
 @Interceptors(ProjectLogger.class)
+@Loggable
 public class OrdersDAO extends AbstractDAO {
 
+    @Loggable
     public List<OrderTable> getListOrders() {
         return em.createQuery("SELECT e FROM ordertable e", OrderTable.class).getResultList();
     }

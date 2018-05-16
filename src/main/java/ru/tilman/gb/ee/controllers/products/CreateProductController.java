@@ -1,7 +1,6 @@
 package ru.tilman.gb.ee.controllers.products;
 
 
-import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.CategoryDAO;
 import ru.tilman.gb.ee.dao.ProductDAO;
@@ -12,7 +11,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
-import javax.interceptor.Interceptors;
 import java.util.List;
 
 @ViewScoped

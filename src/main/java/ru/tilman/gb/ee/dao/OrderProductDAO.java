@@ -1,6 +1,7 @@
 package ru.tilman.gb.ee.dao;
 
-import ru.tilman.gb.ee.ProjectLogger;
+import ru.tilman.gb.ee.logger.Loggable;
+import ru.tilman.gb.ee.logger.ProjectLogger;
 import ru.tilman.gb.ee.entity.*;
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Stateless
 @Interceptors(ProjectLogger.class)
+@Loggable
 public class OrderProductDAO extends AbstractDAO {
 
     public void merge(OrderProducts entity) {
@@ -15,6 +17,7 @@ public class OrderProductDAO extends AbstractDAO {
         em.merge(entity);
     }
 
+    @Loggable
     public List<OrderProducts> getOrderProductsListByOrderId(String id) {
        return em.createQuery(
                "SELECT orderproducts " +

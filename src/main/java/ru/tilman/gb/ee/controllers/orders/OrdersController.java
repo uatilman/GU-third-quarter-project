@@ -1,22 +1,21 @@
 package ru.tilman.gb.ee.controllers.orders;
 
-import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.OrdersDAO;
 import ru.tilman.gb.ee.entity.OrderTable;
+import ru.tilman.gb.ee.logger.Loggable;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
-import javax.interceptor.Interceptors;
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @ManagedBean
 @ViewScoped
+@Loggable
 public class OrdersController extends AbstractController {
 
     @Inject
@@ -33,18 +32,12 @@ public class OrdersController extends AbstractController {
         ordersDAO.removeById(orderTable.getId(), orderTable.getClass());
     }
 
+    @Loggable
     public List<OrderTable> getOrders() {
         return new ArrayList<>(ordersDAO.getListOrders());
     }
 
-    public OrdersDAO getOrdersDAO() {
-        return ordersDAO;
-    }
-
-    public void setOrdersDAO(OrdersDAO ordersDAO) {
-        this.ordersDAO = ordersDAO;
-    }
-
+    @Loggable
     public OrderTable getOrderTable() {
         return orderTable;
     }

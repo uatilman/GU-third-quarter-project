@@ -1,6 +1,6 @@
 package ru.tilman.gb.ee.dao;
 
-import ru.tilman.gb.ee.ProjectLogger;
+import ru.tilman.gb.ee.logger.ProjectLogger;
 import ru.tilman.gb.ee.entity.Category;
 
 import javax.ejb.Stateless;

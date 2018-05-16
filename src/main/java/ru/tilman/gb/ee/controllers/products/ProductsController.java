@@ -2,25 +2,13 @@ package ru.tilman.gb.ee.controllers.products;
 
 //import org.primefaces.PrimeFaces;
 import org.primefaces.PrimeFaces;
-import ru.tilman.gb.ee.ProjectLogger;
 import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.ProductDAO;
-import ru.tilman.gb.ee.entity.AbstractEntity;
 import ru.tilman.gb.ee.entity.Product;
 
 import javax.faces.bean.*;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.interceptor.Interceptors;
-import javax.servlet.ServletContext;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 
 /**
