@@ -12,7 +12,7 @@ import java.util.List;
 public class MenuDao extends AbstractDAO {
 
     public List<MenuItems> getMenuList(){
-        return em.createQuery("SELECT e FROM MenuItems e", MenuItems.class).getResultList();
+        return em.createQuery("SELECT e FROM menuitems e", MenuItems.class).getResultList();
     }
 
 }

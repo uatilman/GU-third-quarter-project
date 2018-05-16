@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@Entity
+@Entity (name = "ordertable")
 @Interceptors(ProjectLogger.class)
 public class OrderTable extends AbstractEntity {
 

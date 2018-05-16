@@ -12,7 +12,7 @@ import java.util.List;
 public class OrdersDAO extends AbstractDAO {
 
     public List<OrderTable> getListOrders() {
-        return em.createQuery("SELECT e FROM OrderTable e", OrderTable.class).getResultList();
+        return em.createQuery("SELECT e FROM ordertable e", OrderTable.class).getResultList();
     }
 
 

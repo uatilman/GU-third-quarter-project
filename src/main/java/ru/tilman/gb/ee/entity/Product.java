@@ -6,7 +6,7 @@ import javax.interceptor.Interceptors;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
+@Entity (name = "product")
 @Interceptors(ProjectLogger.class)
 public class Product extends AbstractEntity {
 

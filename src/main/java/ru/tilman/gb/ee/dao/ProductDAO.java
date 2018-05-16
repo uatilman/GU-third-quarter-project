@@ -28,7 +28,7 @@ public class ProductDAO extends AbstractDAO {
 
 
     public List<Product> getListProduct() {
-        return em.createQuery("SELECT e FROM Product e", Product.class).getResultList();
+        return em.createQuery("SELECT e FROM product e", Product.class).getResultList();
     }
 
     public Product getProductById(String id) {
@@ -39,14 +39,14 @@ public class ProductDAO extends AbstractDAO {
 
     public List<Product> getListProductByCategoryId(String categoryId) {
         if (categoryId == null || categoryId.isEmpty()) return null;
-        return em.createQuery("SELECT e FROM Product e WHERE e.category.id = :categoryId", Product.class)
+        return em.createQuery("SELECT e FROM product e WHERE e.category.id = :categoryId", Product.class)
                 .setParameter("categoryId", categoryId).getResultList();
     }
 
     public List<Product> getProductsByName(String productName) {
         System.out.println(productName);
         if (productName == null || productName.isEmpty()) return null;
-        return  em.createQuery("SELECT e FROM Product e WHERE e.name = :productName", Product.class)
+        return  em.createQuery("SELECT e FROM product e WHERE e.name = :productName", Product.class)
                 .setParameter("productName", productName).getResultList();
     }
 }

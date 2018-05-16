@@ -17,7 +17,7 @@ import java.util.List;
 public class CategoryDAO extends AbstractDAO {
 
     public List<Category> getListCategories() {
-        return em.createQuery("SELECT e FROM Category e", Category.class).getResultList();
+        return em.createQuery("SELECT e FROM category e", Category.class).getResultList();
     }
 
 

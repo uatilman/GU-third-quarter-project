@@ -9,7 +9,7 @@ import java.io.Serializable;
 /*https://docs.oracle.com/javaee/7/api/javax/persistence/MapsId.html*/
 
 @SessionScoped
-@Entity
+@Entity (name = "orderproducts")
 @Interceptors(ProjectLogger.class)
 public class OrderProducts {
 

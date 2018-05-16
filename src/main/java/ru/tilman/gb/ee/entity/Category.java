@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity (name = "category")
 @Interceptors(ProjectLogger.class)
 public class Category extends AbstractEntity {
 

@@ -18,15 +18,15 @@ public class OrderProductDAO extends AbstractDAO {
     public List<OrderProducts> getOrderProductsListByOrderId(String id) {
        return em.createQuery(
                "SELECT orderproducts " +
-                       "FROM OrderProducts orderproducts " +
+                       "FROM orderproducts orderproducts " +
                        "WHERE orderproducts.orderProductsIds.orderId " +
                        "LIKE :id", OrderProducts.class).setParameter("id", id).getResultList();
     }
 
     public List<Product> getListProductsByOrderId(String id) {
         return em.createQuery(
-                "SELECT p from Product p WHERE p.id IN (" +
-                        "SELECT e.orderProductsIds.productId FROM OrderProducts e WHERE e.orderProductsIds.orderId LIKE :id)", Product.class
+                "SELECT p from product p WHERE p.id IN (" +
+                        "SELECT e.orderProductsIds.productId FROM orderproducts e WHERE e.orderProductsIds.orderId LIKE :id)", Product.class
         ).setParameter("id", id).getResultList();
 
     }

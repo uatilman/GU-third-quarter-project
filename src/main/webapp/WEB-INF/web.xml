@@ -27,7 +27,8 @@
 
     <login-config>
         <auth-method>FORM</auth-method>
-        <realm-name>file</realm-name>
+        <realm-name>secureDomain</realm-name>
+
 
         <form-login-config>
             <form-login-page>/WEB-INF/login.jsp</form-login-page>

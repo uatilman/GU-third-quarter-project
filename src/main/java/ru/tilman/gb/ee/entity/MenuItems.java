@@ -5,7 +5,7 @@ import ru.tilman.gb.ee.ProjectLogger;
 import javax.interceptor.Interceptors;
 import javax.persistence.*;
 
-@Entity
+@Entity (name = "menuitems")
 @Interceptors(ProjectLogger.class)
 public class MenuItems extends AbstractEntity {
 
