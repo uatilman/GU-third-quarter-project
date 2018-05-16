@@ -1061,6 +1061,7 @@ button .svg-inline--fa.fa-w-14:hover {
 
 .product-table .image-column {
     width: 100px;
+    text-align: center;
 }
 
 .product-table .image-column img {

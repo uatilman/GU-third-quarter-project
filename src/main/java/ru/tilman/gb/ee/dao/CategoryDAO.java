@@ -23,7 +23,6 @@ public class CategoryDAO extends AbstractDAO {
 
     public Category getCategoryById(String id) {
         if (id == null) {
-            System.out.println("getCategoryById return null");
             return null;
         }
         return em.find(Category.class, id);

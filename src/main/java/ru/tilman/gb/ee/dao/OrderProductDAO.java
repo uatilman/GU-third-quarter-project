@@ -41,6 +41,10 @@ public class OrderProductDAO extends AbstractDAO {
 
     public void persist(OrderProducts entity) {
         if (entity == null) return;
+        System.out.println("OrderProducts " + entity.getOrderTable().getId() + " *** " + entity.getProduct().getId());
+
+//        em.createQuery("INSERT INTO orderproducts op () VALUES (:countproduct, :ordertableid, :productid)", OrderProducts.class);
+
         em.persist(entity);
     }
 

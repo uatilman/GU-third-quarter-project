@@ -21,15 +21,6 @@ public class OrderProducts {
     @ManyToOne
     private OrderTable orderTable; //add mysql manual CASCADE:
 
-/*    ALTER TABLE `interior`.`orderproducts`
-    DROP FOREIGN KEY `FKbnir9uolyq1xe19j8krsya6ft`;
-    ALTER TABLE `interior`.`orderproducts`
-    ADD CONSTRAINT `FKbnir9uolyq1xe19j8krsya6ft`
-    FOREIGN KEY (`orderTable_id`)
-    REFERENCES `interior`.`ordertable` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE RESTRICT;*/
-
     @MapsId("productId")
     @ManyToOne
     private Product product;
@@ -70,3 +61,12 @@ public class OrderProducts {
         this.count = count;
     }
 }
+
+/*    ALTER TABLE `interior`.`orderproducts`
+    DROP FOREIGN KEY `FKbnir9uolyq1xe19j8krsya6ft`;
+    ALTER TABLE `interior`.`orderproducts`
+    ADD CONSTRAINT `FKbnir9uolyq1xe19j8krsya6ft`
+    FOREIGN KEY (`orderTable_id`)
+    REFERENCES `interior`.`ordertable` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE RESTRICT;*/

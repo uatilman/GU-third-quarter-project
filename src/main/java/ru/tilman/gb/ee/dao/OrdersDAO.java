@@ -21,7 +21,6 @@ public class OrdersDAO extends AbstractDAO {
 
     public OrderTable getOrderById(String id) {
         if (id == null) {
-            System.out.println("getCategoryById return null");
             return null;
         }
         return em.find(OrderTable.class, id);

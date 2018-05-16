@@ -42,9 +42,6 @@ public class ProductsController extends AbstractController {
     }
 
 
-    public void selectProductFromDialog(Product product) {
-        PrimeFaces.current().dialog().closeDynamic(product);
-    }
 
 
 //    public void printUserInfo() throws IOException {

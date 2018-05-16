@@ -15,4 +15,8 @@ public abstract class AbstractController {
         final FacesContext context = FacesContext.getCurrentInstance();
         return (HttpServletRequest) context.getExternalContext().getRequest();
     }
+
+    public HttpServletRequest getRequest() {
+        return request;
+    }
 }

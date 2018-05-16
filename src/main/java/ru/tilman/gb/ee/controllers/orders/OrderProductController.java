@@ -5,6 +5,7 @@ import org.primefaces.event.SelectEvent;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
@@ -25,9 +26,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Named(value = "orderProductController")
+//@Named(value = "orderProductController")
 @ViewScoped
-@Loggable
+@ManagedBean
+//@Loggable
 public class OrderProductController extends AbstractController {
 
     private final String id = getParamString("id");
@@ -49,26 +51,32 @@ public class OrderProductController extends AbstractController {
         orderProductsList = orderProductDAO.getOrderProductsListByOrderId(id);
         orderTable = ordersDAO.getOrderById(id);
     }
-
     public void chooseProduct() {
-        Map<String,Object> options = new HashMap<>();
+        System.out.println("chooseProduct");
+        Map<String, Object> options = new HashMap<>();
         options.put("resizable", false);
         options.put("draggable", false);
         options.put("modal", true);
-        PrimeFaces.current().dialog().openDynamic("1", options, null);
-    }
-
-    public void showMessage() {
-        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "What we do in life", "Echoes in eternity.");
-
-        PrimeFaces.current().dialog().showMessageDynamic(message);
+        PrimeFaces.current().dialog().openDynamic("chooseproduct", options, null);
     }
 
     public void onProductChosen(SelectEvent event) {
         Product product = (Product) event.getObject();
-
+// TODO: 12.05.2018 add db persist
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Product Selected", "Id:" + product.getId());
         FacesContext.getCurrentInstance().addMessage(null, message);
+
+        System.out.println("orderTable " + orderTable.getId());
+        OrderProducts orderProducts = new OrderProducts();
+        orderProducts.setProduct(product);
+        orderProducts.setOrderTable(orderTable);
+        orderProducts.setCount(1);
+
+        orderProductDAO.persist(orderProducts);
+    }
+
+    public void selectProductFromDialog(Product product) {
+        PrimeFaces.current().dialog().closeDynamic(product);
     }
 
     public String getProductTotal(int rowIndex) {
