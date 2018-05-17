@@ -55,7 +55,7 @@ public class OrderProductController extends AbstractController {
     public void chooseProduct() {
         System.out.println("chooseProduct");
         Map<String, Object> options = new HashMap<>();
-        options.put("resizable", false);
+//        options.put("resizable", false);
         options.put("draggable", false);
         options.put("modal", true);
         PrimeFaces.current().dialog().openDynamic("chooseproduct", options, null);
@@ -68,8 +68,9 @@ public class OrderProductController extends AbstractController {
         orderProducts.setProduct(product);
         orderProducts.setOrderTable(orderTable);
         orderProducts.setCount(1);
-        orderProductsList.add(orderProducts);
         orderProductDAO.persist(orderProducts);
+
+        orderProductsList = orderProductDAO.getOrderProductsListByOrderId(id);
 
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Product Selected", product.getName());
         FacesContext.getCurrentInstance().addMessage(null, message);

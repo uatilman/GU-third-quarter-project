@@ -9,6 +9,7 @@ import java.util.List;
 public class OrderProductDAO extends AbstractDAO {
 
     public void remove(OrderProducts element) {
+        // TODO: 17.05.18 can it do easy? em.remove(element) don`t work
         if (element == null) return;
         em.remove(
                 em.find(OrderProducts.class, element.getOrderProductsIds())
@@ -39,6 +40,7 @@ public class OrderProductDAO extends AbstractDAO {
 
     public void persist(OrderProducts orderProducts) {
         if (orderProducts == null) return;
+        // TODO: 17.05.18 why it does`n work
 //        em.persist(orderProducts);
         em.createNativeQuery(
                 "INSERT INTO orderproducts (`count`, `orderTable_id`, `product_id`) " +
