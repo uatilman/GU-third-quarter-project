@@ -18,7 +18,7 @@
 
     <custom:header menuuri="order.xhtml"/>
 
-    <h:form>
+    <h:form id="container">
         <div class="padding-site">
             <div class="order-product-table product-table">
                 <h1>
@@ -67,7 +67,7 @@
 
                 <p:growl id="growl" showDetail="true"/>
                 <p:commandButton value="Show" icon="ui-icon-extlink" actionListener="#{orderProductController.chooseProduct}">
-                    <p:ajax event="dialogReturn" listener="#{orderProductController.onProductChosen}" update="growl"/>
+                    <p:ajax event="dialogReturn" listener="#{orderProductController.onProductChosen}" update="table"/>
                 </p:commandButton>
 
             </div>

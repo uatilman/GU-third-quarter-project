@@ -51,6 +51,7 @@ public class OrderProductController extends AbstractController {
         orderProductsList = orderProductDAO.getOrderProductsListByOrderId(id);
         orderTable = ordersDAO.getOrderById(id);
     }
+
     public void chooseProduct() {
         System.out.println("chooseProduct");
         Map<String, Object> options = new HashMap<>();
@@ -62,17 +63,17 @@ public class OrderProductController extends AbstractController {
 
     public void onProductChosen(SelectEvent event) {
         Product product = (Product) event.getObject();
-// TODO: 12.05.2018 add db persist
-        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Product Selected", product.getName());
-        FacesContext.getCurrentInstance().addMessage(null, message);
 
-        System.out.println("orderTable " + orderTable.getId());
         OrderProducts orderProducts = new OrderProducts();
         orderProducts.setProduct(product);
         orderProducts.setOrderTable(orderTable);
         orderProducts.setCount(1);
-
+        orderProductsList.add(orderProducts);
         orderProductDAO.persist(orderProducts);
+
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Product Selected", product.getName());
+        FacesContext.getCurrentInstance().addMessage(null, message);
+
     }
 
     public void selectProductFromDialog(Product product) {
@@ -104,11 +105,13 @@ public class OrderProductController extends AbstractController {
         this.orderProductsList = orderProductsList;
     }
 
-    /**
-     * unchecked
-     */
     public void save(OrderProducts orderProduct) {
-        orderProductDAO.merge(orderProduct);
+        if (orderProduct.getCount() <= 0) {
+            orderProductsList.remove(orderProduct);
+            orderProductDAO.remove(orderProduct);
+        } else {
+            orderProductDAO.merge(orderProduct);
+        }
     }
 
     public String getId() {

@@ -11,7 +11,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
             <!--<property name="openjpa.jdbc.SchemaFactory" value="native(ForeignKeys=true)"/>-->
 
-            <!--<property name="hibernate.show_sql" value="false"/>-->
+            <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>

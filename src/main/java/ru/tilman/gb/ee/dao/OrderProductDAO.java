@@ -1,25 +1,25 @@
 package ru.tilman.gb.ee.dao;
 
-import ru.tilman.gb.ee.logger.Loggable;
-import ru.tilman.gb.ee.logger.ProjectLogger;
-import ru.tilman.gb.ee.entity.*;
 
+import ru.tilman.gb.ee.entity.*;
 import javax.ejb.Stateless;
-import javax.interceptor.Interceptors;
-import javax.persistence.Query;
 import java.util.List;
 
 @Stateless
-@Interceptors(ProjectLogger.class)
-@Loggable
 public class OrderProductDAO extends AbstractDAO {
+
+    public void remove(OrderProducts element) {
+        if (element == null) return;
+        em.remove(
+                em.find(OrderProducts.class, element.getOrderProductsIds())
+        );
+    }
 
     public void merge(OrderProducts entity) {
         if (entity == null) return;
         em.merge(entity);
     }
 
-    //    @Loggable
     public List<OrderProducts> getOrderProductsListByOrderId(String id) {
         return em.createQuery(
                 "SELECT orderproducts " +
@@ -36,20 +36,17 @@ public class OrderProductDAO extends AbstractDAO {
 
     }
 
-    public OrderProducts OrderProductsBiId(String id) {
-        if (id == null) return null;
-        return em.find(OrderProducts.class, id);
-    }
 
     public void persist(OrderProducts orderProducts) {
         if (orderProducts == null) return;
+//        em.persist(orderProducts);
         em.createNativeQuery(
-                "INSERT INTO orderproducts (`count`, `orderTable_id`, `product_id`, `id`) " +
-                        "VALUES (:countproduct, :ordertableid, :productid, :id)")
-                .setParameter("countproduct", Integer.toString(orderProducts.getCount()))
+                "INSERT INTO orderproducts (`count`, `orderTable_id`, `product_id`) " +
+                        "VALUES (:countproduct, :ordertableid, :productid)")
+                .setParameter("countproduct", orderProducts.getCount())
                 .setParameter("ordertableid", orderProducts.getOrderTable().getId())
                 .setParameter("productid", orderProducts.getProduct().getId())
-                .setParameter("id", orderProducts.getId()).executeUpdate();
+                .executeUpdate();
     }
 
 }
