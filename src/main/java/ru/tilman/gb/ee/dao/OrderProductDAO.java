@@ -3,8 +3,10 @@ package ru.tilman.gb.ee.dao;
 import ru.tilman.gb.ee.logger.Loggable;
 import ru.tilman.gb.ee.logger.ProjectLogger;
 import ru.tilman.gb.ee.entity.*;
+
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
+import javax.persistence.Query;
 import java.util.List;
 
 @Stateless
@@ -17,13 +19,13 @@ public class OrderProductDAO extends AbstractDAO {
         em.merge(entity);
     }
 
-//    @Loggable
+    //    @Loggable
     public List<OrderProducts> getOrderProductsListByOrderId(String id) {
-       return em.createQuery(
-               "SELECT orderproducts " +
-                       "FROM orderproducts orderproducts " +
-                       "WHERE orderproducts.orderProductsIds.orderId " +
-                       "LIKE :id", OrderProducts.class).setParameter("id", id).getResultList();
+        return em.createQuery(
+                "SELECT orderproducts " +
+                        "FROM orderproducts orderproducts " +
+                        "WHERE orderproducts.orderProductsIds.orderId " +
+                        "LIKE :id", OrderProducts.class).setParameter("id", id).getResultList();
     }
 
     public List<Product> getListProductsByOrderId(String id) {
@@ -39,13 +41,15 @@ public class OrderProductDAO extends AbstractDAO {
         return em.find(OrderProducts.class, id);
     }
 
-    public void persist(OrderProducts entity) {
-        if (entity == null) return;
-        System.out.println("OrderProducts " + entity.getOrderTable().getId() + " *** " + entity.getProduct().getId());
-
-//        em.createQuery("INSERT INTO orderproducts op () VALUES (:countproduct, :ordertableid, :productid)", OrderProducts.class);
-
-        em.persist(entity);
+    public void persist(OrderProducts orderProducts) {
+        if (orderProducts == null) return;
+        em.createNativeQuery(
+                "INSERT INTO orderproducts (`count`, `orderTable_id`, `product_id`, `id`) " +
+                        "VALUES (:countproduct, :ordertableid, :productid, :id)")
+                .setParameter("countproduct", Integer.toString(orderProducts.getCount()))
+                .setParameter("ordertableid", orderProducts.getOrderTable().getId())
+                .setParameter("productid", orderProducts.getProduct().getId())
+                .setParameter("id", orderProducts.getId()).executeUpdate();
     }
 
 }

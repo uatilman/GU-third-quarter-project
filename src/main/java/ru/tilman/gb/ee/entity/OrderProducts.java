@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Entity (name = "orderproducts")
 @Interceptors(ProjectLogger.class)
 @Loggable
-public class OrderProducts {
+public class OrderProducts extends AbstractEntity{
 
     @EmbeddedId
     private OrderProductsIds orderProductsIds;

@@ -63,7 +63,7 @@ public class OrderProductController extends AbstractController {
     public void onProductChosen(SelectEvent event) {
         Product product = (Product) event.getObject();
 // TODO: 12.05.2018 add db persist
-        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Product Selected", "Id:" + product.getId());
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Product Selected", product.getName());
         FacesContext.getCurrentInstance().addMessage(null, message);
 
         System.out.println("orderTable " + orderTable.getId());
