@@ -13,6 +13,7 @@ import ru.tilman.gb.ee.controllers.AbstractController;
 import ru.tilman.gb.ee.dao.OrderProductDAO;
 import ru.tilman.gb.ee.dao.OrdersDAO;
 import ru.tilman.gb.ee.entity.OrderProducts;
+import ru.tilman.gb.ee.entity.OrderProductsIds;
 import ru.tilman.gb.ee.entity.OrderTable;
 import ru.tilman.gb.ee.entity.Product;
 import ru.tilman.gb.ee.logger.Loggable;
@@ -65,12 +66,22 @@ public class OrderProductController extends AbstractController {
         Product product = (Product) event.getObject();
 
         OrderProducts orderProducts = new OrderProducts();
-        orderProducts.setProduct(product);
-        orderProducts.setOrderTable(orderTable);
-        orderProducts.setCount(1);
-        orderProductDAO.persist(orderProducts);
+        orderProducts.setOrderProductsIds(new OrderProductsIds(orderTable.getId(), product.getId()));
 
-        orderProductsList = orderProductDAO.getOrderProductsListByOrderId(id);
+        if (!orderProductsList.contains(orderProducts)) {
+            orderProducts.setProduct(product);
+            orderProducts.setOrderTable(orderTable);
+            orderProducts.setCount(1);
+            orderProductsList.add(orderProducts);
+            orderProductDAO.persist(orderProducts);
+        } else {
+            OrderProducts existingOrderProducts = orderProductsList.get(orderProductsList.indexOf(orderProducts));
+            existingOrderProducts.setCount(existingOrderProducts.getCount() + 1);
+            orderProductDAO.merge(existingOrderProducts);
+        }
+
+
+//        orderProductsList = orderProductDAO.getOrderProductsListByOrderId(id);
 
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Product Selected", product.getName());
         FacesContext.getCurrentInstance().addMessage(null, message);
@@ -81,9 +92,9 @@ public class OrderProductController extends AbstractController {
         PrimeFaces.current().dialog().closeDynamic(product);
     }
 
-    public String getProductTotal(int rowIndex) {
-        Double total = orderProductsList.get(rowIndex).getCount() *
-                orderProductsList.get(rowIndex).getProduct().getPrice();
+    public String getProductTotal(OrderProducts orderProducts) {
+        Double total = orderProducts.getCount() *
+                orderProducts.getProduct().getPrice();
         return String.format("%.2f", total);
     }
 
@@ -107,6 +118,7 @@ public class OrderProductController extends AbstractController {
     }
 
     public void save(OrderProducts orderProduct) {
+
         if (orderProduct.getCount() <= 0) {
             orderProductsList.remove(orderProduct);
             orderProductDAO.remove(orderProduct);

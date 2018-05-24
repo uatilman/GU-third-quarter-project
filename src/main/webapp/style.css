@@ -280,7 +280,7 @@ body {
     justify-content: space-between;
 }
 
-nav {
+nav, .nav {
     list-style-type: none;
 }
 
@@ -1076,8 +1076,12 @@ button .svg-inline--fa.fa-w-14:hover {
     width: 50px;
 }
 
-.order-product-number, .order-product-id, .count-column {
-    width: 60px;
+.order-product-number {
+    width: 20px;
+}
+
+.order-product-id, .count-column {
+    width: 80px;
 }
 
 .order-product-number, .order-product-id, .count-column, .count-column input, .total-column, remove-column {
@@ -1086,4 +1090,9 @@ button .svg-inline--fa.fa-w-14:hover {
 
 .total-column {
     width: 100px;
+}
+
+.order-product-table {
+    margin-bottom: 30px;
+    margin-top: 20px;
 }

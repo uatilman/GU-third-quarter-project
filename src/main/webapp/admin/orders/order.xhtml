@@ -21,52 +21,44 @@
     <h:form id="container">
         <div class="padding-site">
             <div class="order-product-table product-table">
-                <h1>
-                    <h:outputLabel value="Order #{orderProductController.orderTable.id}"/>
-                </h1>
-
-                <p:outputPanel>
-                    <p:outputLabel value="User name"/>
-                </p:outputPanel>
-                <p:outputPanel>
-                    <p:inputText value="#{orderProductController.orderTable.userName}"/>
-                </p:outputPanel>
-
-                <p:outputPanel>
-                    <p:outputLabel value="Phone"/>
-                </p:outputPanel>
-                <p:outputPanel>
-                    <p:inputText value="#{orderProductController.orderTable.phone}"/>
-                </p:outputPanel>
-
+                <h1>Orde r</h1> <h:outputLabel value="Order #{orderProductController.orderTable.id}"/>
+                <table class="order-product-table">
+                    <tr>
+                        <td><p:outputLabel value="User name"/></td>
+                        <td><p:inputText value="#{orderProductController.orderTable.userName}"/></td>
+                    </tr>
+                    <tr>
+                        <td><p:outputLabel value="Phone"/></td>
+                        <td><p:inputText value="#{orderProductController.orderTable.phone}"/></td>
+                    </tr>
+                </table>
+                <hr/>
                 <br/>
                 <p:dataTable value="#{orderProductController.orderProductsList}" var="item"
                              rowIndexVar="rowIndex" border="1" id="table">
                     <p:column styleClass="order-product-number" headerText="№">#{rowIndex+1}</p:column>
                     <p:column styleClass="order-product-id" headerText="ID">#{item.product.id}</p:column>
                     <p:column styleClass="name-column" headerText="Name">#{item.product.name}</p:column>
-                    <p:column styleClass="image-column" headerText="Foto"><img src="${orderProductController.request.contextPath}/#{item.product.imgUrl}"
-                                                                               alt="image not found"/></p:column>
+                    <p:column styleClass="image-column" headerText="Foto"><img
+                            src="${orderProductController.request.contextPath}/#{item.product.imgUrl}"
+                            alt="image not found"/></p:column>
                     <p:column styleClass="count-column" headerText="Count">
-                        <p:inputText value="#{item.count}">
+                        <p:spinner value="#{item.count}">
                             <p:ajax listener="#{orderProductController.save(item)}" update="table"/>
-                        </p:inputText>
+                        </p:spinner>
                     </p:column>
 
                     <p:column styleClass="total-column"
-                              headerText="Total">#{orderProductController.getProductTotal(rowindex)}</p:column>
+                              headerText="Total">#{orderProductController.getProductTotal(item)}</p:column>
 
-                    <!--<p:column headerText="Doing">-->
-                    <!--<p:commandLink value="SAVE" actionListener="#{orderProductController.save(item)}"-->
-                    <!--update="table"/>-->
-                    <!--</p:column>-->
                     <f:facet name="footer">Total price ${orderProductController.total}</f:facet>
                 </p:dataTable>
                 <br/>
                 <br/>
 
                 <p:growl id="growl" showDetail="true"/>
-                <p:commandButton value="Show" icon="ui-icon-extlink" actionListener="#{orderProductController.chooseProduct}">
+                <p:commandButton value="Show" icon="ui-icon-extlink"
+                                 actionListener="#{orderProductController.chooseProduct}">
                     <p:ajax event="dialogReturn" listener="#{orderProductController.onProductChosen}" update="table"/>
                 </p:commandButton>
 

@@ -6,6 +6,7 @@ import ru.tilman.gb.ee.logger.ProjectLogger;
 import javax.faces.bean.SessionScoped;
 import javax.interceptor.Interceptors;
 import javax.persistence.*;
+import java.util.Objects;
 /*https://docs.oracle.com/javaee/7/api/javax/persistence/MapsId.html*/
 
 @SessionScoped
@@ -59,6 +60,20 @@ public class OrderProducts {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderProducts that = (OrderProducts) o;
+        return Objects.equals(orderProductsIds, that.orderProductsIds);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(orderProductsIds);
     }
 }
 
