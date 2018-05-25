@@ -13,7 +13,7 @@
             <h4>TRENDING</h4>
             <h2>Fishnet Chair</h2>
             <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt</p>
-            <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
+            <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
         </div>
         <div class="pagination">
             <a href="#" class="circle"></a>
@@ -76,7 +76,7 @@
                     <h2>Fishnet Chair</h2>
                     <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt
                     </p>
-                    <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
+                    <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
                 </div>
             </div>
             <div class="exclusive-item">
@@ -86,7 +86,7 @@
                     <h2>Fishnet Chair</h2>
                     <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt
                     </p>
-                    <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
+                    <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
                 <h4>Hot deal</h4>
                 <h2>Fishnet Chair</h2>
                 <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt</p>
-                <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
+                <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
             </div>
             <div class="pagination">
                 <a href="#" class="circle"></a>
@@ -130,7 +130,7 @@
                     <h2>Fishnet Chair</h2>
                     <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt
                     </p>
-                    <a class="orderTable-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
+                    <a class="order-button" href="#">Order Us <img src="img/arrow.png" alt="orderTable button image"></a>
                 </div>
             </div>
 
