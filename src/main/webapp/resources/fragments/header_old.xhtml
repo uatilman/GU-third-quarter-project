@@ -22,7 +22,7 @@
             </a>
             <nav jsf:id="nav">
                 <ul class="menu">
-                    <li><a href="${request.contextPath}/admin/products/products.xhtml">PRODUCTS</a></li>
+                    <li><a href="${request.contextPath}/admin/productList/productList.xhtml">PRODUCTS</a></li>
                     <li><a href="${request.contextPath}/admin/categories/categories.xhtml">CATEGORIES</a></li>
                     <li><a href="${request.contextPath}/admin/orders/orders.xhtml">ORDERS</a></li>
                 </ul>
@@ -30,13 +30,13 @@
         </div>
 
         <p:dataList value="${menuController.menuItems}" var="item" styleClass="menu">
-            <li><a href="${request.contextPath}/admin/products/${item.url}">#{item.name}</a></li>
+            <li><a href="${request.contextPath}/admin/productList/${item.url}">#{item.name}</a></li>
         </p:dataList>
 
         <ul class="menu">
         <ui:repeat value="${menuController.menuItems}" var="item">
             <li><a class="${menuController.getStyleClass(item.url, cc.attrs.menu-uri)}"
-                   href="${request.contextPath}/admin/products/${item.url}">#{item.name}</a></li>
+                   href="${request.contextPath}/admin/productList/${item.url}">#{item.name}</a></li>
         </ui:repeat>
 
     </header>

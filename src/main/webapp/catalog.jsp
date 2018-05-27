@@ -17,7 +17,7 @@
         <div class="padding-site">
             <div class="submenu">
                 <nav>
-                    <ul class="products-submenu">
+                    <ul class="productList-submenu">
                         <li><a class="active-link" href="#">All</a></li>
                         <li><a href="#">HOME</a></li>
                         <li><a href="#">OFFICE</a></li>
@@ -27,7 +27,7 @@
                     </ul>
                 </nav>
             </div>
-            <div class="product product-in-products-page">
+            <div class="product product-in-productList-page">
                 <a href="#"><img src="img/product10.jpg" alt="product 10 image"></a>
                 <a href="product"><img src="img/product11.jpg" alt="product 11 image"></a>
                 <a href="#"><img src="img/product12.png" alt="product 12 image"></a>

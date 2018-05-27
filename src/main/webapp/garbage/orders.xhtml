@@ -23,7 +23,7 @@
         <div class="padding-site">
             <div class="product-table">
                 <h1><h:outputLabel value="Product table"/></h1>
-                <p:dataTable value="${productsController.products}" var="item" id="table" border="1">
+                <p:dataTable value="${productsController.productList}" var="item" id="table" border="1">
                     <p:column styleClass="category-column" headerText="Category">${item.category}</p:column>
                     <p:column styleClass="name-column" headerText="Name">${item.name}</p:column>
                     <p:column styleClass="description-column" headerText="Description">${item.description}</p:column>

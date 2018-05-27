@@ -30,36 +30,42 @@
                 </ul>
             </nav>
 
-            <article class="about-product">
-                <div class="product-images">
-                    <img src="img/slider1.jpg" alt="fishnet chair image"/>
-                    <div class="other-product-color">
-                        <a href="#"></a><img src="img/control-blue.jpg" alt="fishnet chair small image blue"/>
-                        <a href="#"></a><img src="img/control-dark-blue.jpg" alt="fishnet chair small image dark blue"/>
-                        <a href="#"></a><img class="active-link" src="img/slider1.jpg"
-                                             alt="fishnet chair small image red"/>
+            <h:form>
+
+                <p:dataTable style="margin-bottom: 30px" value="${cartController.orderProductsList}" var="item" id="table" border="1">
+                    <p:column style="width: 50px" headerText="name">${item.product.name}</p:column>
+                    <p:column style="width: 30px" headerText="count">${item.count}</p:column>
+                </p:dataTable>
+
+                <article class="about-product">
+                    <div class="product-images">
+                        <img src="#{editProductController.product.imgUrl}" alt="fishnet chair image"/>
+                        <div class="other-product-color">
+                            <a href="#"><img src="img/control-blue.jpg" alt="fishnet chair small image blue"/></a>
+                            <a href="#"><img src="img/control-dark-blue.jpg" alt="fishnet chair small image dark blue"/></a>
+                            <a href="#"><img class="active-link" src="img/slider1.jpg"
+                                             alt="fishnet chair small image red"/></a>
+                        </div>
                     </div>
-                </div>
-                <div class="product-description">
-                    <h2>Fishnet Chair</h2>
-                    <h4>Hot Deal</h4>
-                    <p class="price"> 36.7</p>
-                    <a class="order-button" href="#">Order Us <img src="img/arrow_white.png"
-                                                                        alt="orderTable button image"/></a>
-                    <div class="product-description-text">
-                        <p>The majesty of&nbsp;Mountains&nbsp;&mdash; Ugmonk style.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do&nbsp;eiusmod tempor
-                            incididunt ut
-                            labore</p>
-                        <p>et&nbsp;dolore magna aliqua. Ut&nbsp;enim ad&nbsp;minim veniam, quis nostrud exercitation
-                            ullamco laboris nisi
-                            ut&nbsp;aliquip ex&nbsp;ea&nbsp;commodo consequat.</p>
-                        <p>Duis aute irure dolor in&nbsp;reprehenderit in&nbsp;voluptate velit esse cillum dolore eu&nbsp;fugiat
-                            nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                    <div class="product-description">
+                        <h2>#{editProductController.product.name}</h2>
+                        <h4>Hot Deal</h4>
+                        <p class="price">#{editProductController.product.price}</p>
+
+                        <p:commandLink styleClass="order-button" update="table"
+                                       actionListener="#{cartController.add(editProductController.product)}">
+                            Order Us <img src="img/arrow_white.png"
+                                          alt="orderTable button image"/>
+                        </p:commandLink>
+
+                        <div class="product-description-text">
+                            #{editProductController.product.description}
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+
+            </h:form>
+
             <div class="submenu">
                 <div class="submenu-left trending related-product">
                     <p>Related Products</p>

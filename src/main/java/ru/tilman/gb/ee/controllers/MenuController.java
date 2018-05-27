@@ -55,5 +55,5 @@ public class MenuController extends AbstractController {
 
 /*
 <!--          <p:dataList value="${menuController.menuItems}" var="item" styleClass="menu" >
-<li><a href="${request.contextPath}/admin/products/ #{item.url}">#{item.name}</a></li>
+<li><a href="${request.contextPath}/admin/productList/ #{item.url}">#{item.name}</a></li>
 </p:dataList>-->*/

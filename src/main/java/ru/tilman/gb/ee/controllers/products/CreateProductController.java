@@ -48,7 +48,7 @@ public class CreateProductController extends AbstractController {
                 .findAny().orElse(null));
 
         productDAO.persist(product);
-        return "products.xhtml" + "?faces-redirect=true";
+        return "productList.xhtml" + "?faces-redirect=true";
     }
 
     public CategoryDAO getCategoryDAO() {

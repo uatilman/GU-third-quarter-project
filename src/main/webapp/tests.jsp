@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="products" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="productList" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="m" uri="/WEB-INF/tags.tld" %>
 <!DOCTYPE html>
@@ -82,28 +82,28 @@
             <%--<pre><code class="language-java">--%>
                 <%--//JAVA--%>
                 <%--public class ProductsView {--%>
-                    <%--private List&lt;Product&gt; products;--%>
+                    <%--private List&lt;Product&gt; productList;--%>
 
                     <%--public ProductsView() {--%>
-                        <%--this.products = new ArrayList&lt;Product&gt;();--%>
-                        <%--products.add(new Product("Fishnet Chair0", "The majesty of Mountains — Ugmonk style.","img/product-1.jpg"));--%>
-                        <%--products.add(new Product("Fishnet Chair1", "The majesty of Mountains — Ugmonk style.","img/product-3.jpg"));--%>
-                        <%--products.add(new Product("Fishnet Chair2", "The majesty of Mountains — Ugmonk style.","img/product10.jpg"));--%>
-                        <%--products.add(new Product("Fishnet Chair3", "The majesty of Mountains — Ugmonk style.","img/product1.jpg"));--%>
+                        <%--this.productList = new ArrayList&lt;Product&gt;();--%>
+                        <%--productList.add(new Product("Fishnet Chair0", "The majesty of Mountains — Ugmonk style.","img/product-1.jpg"));--%>
+                        <%--productList.add(new Product("Fishnet Chair1", "The majesty of Mountains — Ugmonk style.","img/product-3.jpg"));--%>
+                        <%--productList.add(new Product("Fishnet Chair2", "The majesty of Mountains — Ugmonk style.","img/product10.jpg"));--%>
+                        <%--productList.add(new Product("Fishnet Chair3", "The majesty of Mountains — Ugmonk style.","img/product1.jpg"));--%>
                     <%--}--%>
 
-                    <%--public List&lt;Product&gt; getProducts() {--%>
-                        <%--return products;--%>
+                    <%--public List&lt;Product&gt; getProductList() {--%>
+                        <%--return productList;--%>
                     <%--}--%>
 
-                    <%--public void setProducts(List&lt;Product&gt; products) {--%>
-                        <%--this.products = products;--%>
+                    <%--public void setProductList(List&lt;Product&gt; productList) {--%>
+                        <%--this.productList = productList;--%>
                     <%--}--%>
                 <%--}--%>
 
                 <%--//JSP--%>
                 <%--&lt;jsp:useBean id="producrList" class="ru.tilman.gb.ee.ProductsView" scope="request"/&gt;--%>
-                <%--&lt;products:forEach items="&dollar;{producrList.products}" var="product"&gt;--%>
+                <%--&lt;productList:forEach items="&dollar;{producrList.productList}" var="product"&gt;--%>
                     <%--&lt;div class="item"&gt;--%>
                         <%--&lt;img class="item-product-img" src="&dollar;{product.imgUrl}" alt="product 1 image"&gt;--%>
                         <%--&lt;div class="product-hover"&gt;--%>
@@ -112,12 +112,12 @@
                             <%--&lt;p&gt;&dollar;{product.description}&lt;/p&gt;--%>
                         <%--&lt;/div&gt;--%>
                     <%--&lt;/div&gt;--%>
-                <%--&lt;/products:forEach&gt;--%>
+                <%--&lt;/productList:forEach&gt;--%>
             <%--</code></pre>--%>
             <%--<p>RESULT:</p>--%>
             <%--<div class="product product-in-home-page">--%>
-                <%--<jsp:useBean id="producrList" class="ru.tilman.gb.ee.controllers.products.ProductsController" scope="request"/>--%>
-                <%--<products:forEach items="${producrList.products}" var="product">--%>
+                <%--<jsp:useBean id="producrList" class="ru.tilman.gb.ee.controllers.productList.ProductsController" scope="request"/>--%>
+                <%--<productList:forEach items="${producrList.productList}" var="product">--%>
                     <%--<div class="item">--%>
                         <%--<img class="item-product-img" src="${product.imgUrl}" alt="product 1 image">--%>
                         <%--<div class="product-hover">--%>
@@ -126,7 +126,7 @@
                             <%--<p>${product.description}</p>--%>
                         <%--</div>--%>
                     <%--</div>--%>
-                <%--</products:forEach>--%>
+                <%--</productList:forEach>--%>
             <%--</div>--%>
             <%--<br>--%>
             <%--<br>--%>

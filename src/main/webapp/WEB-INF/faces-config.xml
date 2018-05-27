@@ -25,10 +25,10 @@
     <!--</managed-bean>-->
 
     <!--<navigation-rule>-->
-        <!--<display-name>/admin/products/edit</display-name>-->
-        <!--<from-view-id>/admin/products/editproduct.xhtml</from-view-id>-->
+        <!--<display-name>/admin/productList/edit</display-name>-->
+        <!--<from-view-id>/admin/productList/editproduct.xhtml</from-view-id>-->
         <!--<navigation-case>-->
-            <!--<to-view-id>/admin/products/editproduct.xhtml</to-view-id>-->
+            <!--<to-view-id>/admin/productList/editproduct.xhtml</to-view-id>-->
         <!--</navigation-case>-->
     <!--</navigation-rule>-->
 

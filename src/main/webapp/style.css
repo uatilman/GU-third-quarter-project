@@ -867,8 +867,14 @@ button .svg-inline--fa.fa-w-14:hover {
 .product-images {
     display: flex;
     flex-direction: column;
+}
+
+.product-images img{
+    display: flex;
+    flex-direction: column;
     width: 570px;
 }
+
 
 .other-product-color {
     margin-bottom: 10px;

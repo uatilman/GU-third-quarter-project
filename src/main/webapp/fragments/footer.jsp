@@ -36,7 +36,7 @@
         </div>
         <div class="let-stay">
             <h4 class="footer-heading">Let&rsquo;s Stay in&nbsp;Touch!</h4>
-            <p>Subscribe to&nbsp;know about our latest news, products and special offers just for suscribers.</p>
+            <p>Subscribe to&nbsp;know about our latest news, productList and special offers just for suscribers.</p>
             <form action="#">
                 <input placeholder="your email address" type="email">
                 <button type="submit"><i class="fab fa-telegram-plane"></i></button>

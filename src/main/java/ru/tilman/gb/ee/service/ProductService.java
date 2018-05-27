@@ -35,7 +35,7 @@ public class ProductService {
 
     //http://localhost:8080/tilman/api/productservice/products?categoryid=1
     @GET
-    @Path("/products")
+    @Path("/productList")
     @Produces({MediaType.APPLICATION_JSON})
     public List<ProductRecord> getListProductByCategoryId(
             @QueryParam(value = "categoryId")

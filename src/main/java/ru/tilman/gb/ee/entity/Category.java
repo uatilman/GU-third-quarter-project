@@ -23,7 +23,7 @@ public class Category extends AbstractEntity {
      * Т.Е. мы неможем удалить категория пока есть продук, который на него ссылается
      */
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<Product> products = new ArrayList<Product>();
+//    private List<Product> productList = new ArrayList<Product>();
 
     public String getName() {
         return name;
@@ -41,12 +41,12 @@ public class Category extends AbstractEntity {
         this.description = description;
     }
 //
-//    public List<Product> getProducts() {
-//        return products;
+//    public List<Product> getProductList() {
+//        return productList;
 //    }
 //
-//    public void setProducts(List<Product> products) {
-//        this.products = products;
+//    public void setProductList(List<Product> productList) {
+//        this.productList = productList;
 //    }
 
     @Override
